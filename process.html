@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style type="text/css">
+        .training {
+            animation: training 1s linear forwards;
+        }
+
+        .award {
+            animation: award 1s linear forwards;
+        }
+
+        .comptition {
+            animation: comptition 1s linear forwards;
+        }
+
+        .review {
+            animation: review 1s linear forwards;
+        }
+
+        @keyframes training {
+            100% {
+                width: 95%;
+            }
+        }
+
+        @keyframes award {
+            100% {
+                width: 75%;
+            }
+        }
+
+        @keyframes comptition {
+            100% {
+                width: 43%;
+            }
+        }
+
+        @keyframes review {
+            100% {
+                width: 25%;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#e6dfdf] ">
+    <div class=" h-[200px] sm:h-[300px] relative  border-white ">
+
+        <!----------------------------------Landing Page start---------------------->
+        <div class="hidden sm:block py-1 px-5 grid grid-cols-3  h-10 bg-[#e60000] z-10 ">
+            <span class="grid grid-cols-2 text-white">
+                <p>ranner@mail.com</p>
+                <p>+1(234)567890</p>
+            </span>
+            <span class="-mt-4 md:py1 flex justify-end gap-6 pr-10  col-span-2 text-white">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-facebook-messenger"></i>
+            </span>
+        </div>
+        <div class="w-full grid grid-cols-2 md:grid-cols-3 z-20 absolute  ">
+            <div class="sticky  " id="logo">
+                <img src="images/mainlogo.png" alt="" width="150px" class=" absolute">
+            </div>
+            <ul class="hidden  -mx-24 md:mx-0 md:flex justify-between gap-5 mt-4 text-white font-bold  ">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li onmouseover="dropdown1()" onmouseout="dropdown1End()"><a href="">Programs
+                    <div class="bg-black/75 p-5 absolute" id="programMenu" style="display:none;">
+                        <ul class=" text-zinc-100 font-normal  ">
+                            <li><a href="./programe.html" class="hover:text-[#e60000]">Program</a></li>
+                            <li><a href="./program_detail.html" class="hover:text-[#e60000]">Program Details</a></li>
+                        </ul>
+                    </div>
+                </li>
+                </a>    
+                <li onmouseover="dropdown2()" onmouseout="dropdown2End()"><a href="">Pages</a>
+                    <div class="bg-black/75 p-5 absolute " id="pagesMenu" style="display:none;">
+                        <ul class=" text-zinc-100 font-normal  ">
+                            <li><a href="./events.html" class="hover:text-[#e60000]">Event</a></li>
+                            <li><a href="./faq.html" class="hover:text-[#e60000]">FAQs</a></li>
+                            <li><a href="./pricing.html" class="hover:text-[#e60000]">Pricing</a></li>
+                            <li><a href="./process.html" class="hover:text-[#e60000]">Process</a></li>
+                            <li><a href="./team.html" class="hover:text-[#e60000]">Team</a></li>
+                            <li><a href="./blog.html" class="hover:text-[#e60000]">Blog</a></li>
+                            <li><a href="./single_post.html" class="hover:text-[#e60000]">Single Page</a></li>
+                            <li><a href="" class="hover:text-[#e60000]">404 Page</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="./contact.html">Contacts</a></li>
+            </ul>
+            <div class="">
+                <button class="hidden md:block  bg-white text-[#e60000] w-24 h-8 mr-10 mt-2 float-right">Sign
+                    Up</button>
+                <button class="block md:hidden text-white text-2xl h-8 mr-10 mt-2 float-right" onclick="menuOpen()"
+                    id="bar"><i class="fa-solid fa-bars sticky "></i></button>
+            </div>
+        </div>
+        <div class="top-[20%]  pl-3 md:pl-10 absolute text-center text-white w-full md:my-10 " id="landingText">
+            <h1 class="text-3xl font-medium sm:text-5xl md:text-6xl font-bold my-6">OUR PROCESS</h1>
+            <H1 class="text-xl sm:text-2xl md:text-3xl font-medium">HOME
+                <i class="fa-sharp fa-solid fa-stop text-[#e60000] text-xl sm:text-2xl md:text-3xl"></i>
+                PROCESS
+            </H1>
+
+        </div>
+        <!-----------------------menu on click (responsive )------------------>
+        <div class="overflow-auto  w-full absolute  bg-black/75 h-full  md:hidden" id="nav" style="left:-100%;transition: .5s;">
+            <div class="pt-10 px-20 float-left  w-[80%]">
+                <img src="images/mainlogo.png" alt="" width="150px" class="">
+            </div>
+            <div class="float-left w-10 pt-10 text-2xl text-[#e60000] ">
+                <i class="fa-solid fa-xmark " onclick="menuClose()"></i>
+            </div>
+            <ul class="mx-24 mt-20">
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./index.html">Home</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./about.html">About</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Programs</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Pages</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Contacts</a></li>
+            </ul>
+        </div>
+        <!-----------------------menu on click end------------------>
+
+        <div class="h-full bg-cover bg-fixed "
+            style="background-image:linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(images/10039.jpg);">
+        </div>
+    </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 md:max-w-[1200px] mx-4 sm:mx-5 md:mx-8 lg:mx-auto text-white mt-10">
+            <div class="order-second sm:order-second md:order-first  grid place-content-center">
+                <img src="./images/10014.jpg" alt="" class="md:w-[500px] md:ml-16">
+            </div>
+
+            <div class=" lg:px-6 order-first sm:order-first md:order-two ">
+                <div class="md:p-4 md:w-[600px] w-full md:my-32 p-7 md:mt-16 mt-16 md:p-0">
+                    <p class="text-[#e60000] text-sm tracking-[0.4rem]">STARTER</p>
+                    <p class="text-[#800000] md:my-7 my-4 md:text-5xl text-4xl font-bold tracking-tight leading-[3rem] md:leading-[4rem]">
+                        BEGIN YOUR
+                        JOURNEY
+                        TODAY</p>
+                    <p class="text-[#800000] ">Curabitur aliquet et ligula at interdum. Morbi posuere mauris id lorem
+                        gravida, sit amet pharetra nisl sagittis. Quisque pellentesque a purus ac dignissim.
+                        Pellentesque et tempor ante, sit amet consectetur ipsum.</p>
+                    <button type="button"
+                        class="mt-10 md:mt-10 text-[#e60000] hover:text-white border-2 border-[#e60000] hover:bg-[#e60000] focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 md:px-5 py-3 text-center uppercase">Contact
+                        us</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:grid md:grid-cols-2 md:flex block lg:flex">
+            <div class="md:w-full md:mb-40">
+                <p class="text-[#e60000] mt-12 mx-24 tracking-[5px]">OUR SKILLS</p>
+                <p class="text-5xl text-[#800000] font-bold leading-[60px] mx-24 tracking-[2px]">BEST TRAINERS, BUILT
+                    FOR
+                    YOU</p>
+                <p class="tracking-[1px] mt-8 text-[#800000] mx-24">Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit.
+                    Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+            <div class="md:px-10 md:w-full text-[#800000]">
+                <p class="text-[#800000] font-bold mt-10">AWARDS</p>
+                <div class="mb-6 h-1 w-full bg-neutral-200 dark:bg-neutral-600">
+                    <div class="training h-1  text-right bg-[#e60000] h-1" style="width:0%">
+                        <span">95%</span>
+                    </div>
+                </div>
+
+                <p class="text-[#800000] font-bold mt-10">AWARDS</p>
+                <div class="mb-6 h-1 w-full bg-neutral-200 dark:bg-neutral-600">
+                    <div class="award h-1 bg-[#e60000] text-right" style="width:0%">
+                        <span">75%</span>
+                    </div>
+                </div>
+                <p class="text-[#800000] font-bold mt-10">COMPETITION</p>
+                <div class="mb-6 h-1 w-full bg-neutral-200 dark:bg-neutral-600">
+                    <div class="comptition h-1 text-right h-1 bg-[#e60000] " style="width:0%"><span>45%</span></div>
+                </div>
+                <p class="text-[#800000] font-bold mt-10">REVIEW</p>
+                <div class="mb-6 h-1 w-full bg-neutral-200 dark:bg-neutral-600">
+                    <div class="review h-1 text-right bg-[#e60000]" style="width:0%"><span>25%</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class=" grid grid-cols-1 lg:grid-cols-2  md:max-w-[1200px] mx-4 sm:mx-5 md:mx-8 lg:mx-auto text-white -mt-5 ">
+        <div class="order-second sm:order-second md:order-first grid place-content-center">
+            <img src="./images/10014.jpg" alt="" class="md:w-[500px] md:ml-16">
+        </div>
+
+        <div class=" lg:px-6 order-first sm:order-first md:order-two">
+            <div class="flex md:block">
+                <div class=" md:p-4 md:w-[600px] w-full md:my-32 p-7 md:mt-10 mt-16 md:p-0">
+                    <p class="text-[#e60000] text-sm tracking-[0.4rem]">STARTER</p>
+                    <p
+                        class=" text-[#800000] md:my-7 my-4 text-4xl md:text-[3rem] font-bold tracking-tight leading-[3rem] md:leading-[4rem]">
+                        INTRAMURAL
+                        SPORTS, BETTER RESULTS</p>
+                    <p class="text-[#800000]">Mauris ex turpis, fringilla ac lectus a, luctus accumsan tellus. Curabitur
+                        consequat felis porttitor ornare dapibus. Mauris pulvinar, justo at blandit lobortis, purus
+                        justo fringilla dui.</p>
+                    <button type="button"
+                        class="mt-10 md:mt-10 text-[#e60000] hover:text-white border-2 border-[#e60000] hover:bg-[#e60000] focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 md:px-5 py-3 text-center uppercase">Contact
+                        us</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Maps & Contact Us Section-->
+    <section class="bg-[url('images/10049.jpg')] h-[720px] bg-center bg-no-repeat bg-cover ">
+        <section class="bg-[#e6dfdf]/25">
+            <div class="w-4/6 mx-auto my-24" id="ourskillText">
+                <p class="text-center text-[#e60000] my-4 pt-24 tracking-[5px]">START RUNNING</p>
+                <h1 class=" text-3xl sm:text-3xl md:text-4xl lg:text-5xl text-center text-[#800000] mt-7 
+            font-bold leading-[50px] sm:leading-[50px] md:leading-[50px] lg:leading-[60px]" id="">
+                    WORK
+                    HARD,
+                    RUNNING
+                    HARDER</h1>
+                <div class="text-center" id="mapupButton">
+                    <button class=" rounded-none  mx-auto mt-11 w-36 h-10 bg-[#e60000] text-white 
+            hover:bg-white hover:text-[#e60000] border-2 border-[#e60000]  transition ease-in-out duration-500 ">GET
+                        STARTED</button>
+                </div>
+            </div>
+            <div class=" grid grid-cols-1 md:grid-cols-2  md:max-w-[1200px] mx-4 sm:mx-5 md:mx-8 lg:mx-auto text-white -mt-5 "
+                id="mapContact">
+                <div class="order-second sm:order-second md:order-first ">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9934.141989196121!2d-0.11779400000000001!3d51.503391!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2slastminute.com%20London%20Eye!5e0!3m2!1sen!2sus!4v1681386107654!5m2!1sen!2sus"
+                        class="h-[300px] sm:h-[300px] md:h-[400px] w-full sm:w-full" width="600" height=""
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div
+                    class=" lg:px-6  bg-[#e6dfdf] h-[300px] sm:h-[300px] md:h-[400px] overflow-hidden order-first sm:order-first md:order-two">
+                    <div class=" md:p-10 md:w-[500px] w-full p-7">
+                        <p class=" text-[#e60000]  md:my-8  text-xl md:text-2xl font-semibold">CONTACT US</p>
+                        <p class="text-[#800000] mt-4 md:-mt-4 ">Lorem ipsum dolor sit amet, consectetur <br>
+                            adipiscing
+                            elit. Ut elit
+                            tellus,
+                            luctus nec <br> ullamcorper
+                            mattis.</p>
+                        <p class="mt-7"><i class="fa-sharp fa-solid fa-location-dot fa-beat  text-[#e60000]"></i>
+                            <b class="text-[#800000] ml-4 ">186 GARNETT FIELD, MISSISSIPPI</b>
+                        </p>
+                        <p class="my-4"><i class="fa-sharp fa-solid fa-phone fa-beat  text-[#e60000]"></i>
+                            <b class="text-[#800000] ml-4 ">8945616597</b>
+                        </p>
+                        <p class="my-4"><i class="fa-solid fa-envelope fa-beat  text-[#e60000]"></i>
+                            <b class="text-[#800000] ml-4 ">intership@gmail.com</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section>
+
+    </section>
+    <!-- map section start here -->
+
+    <div class="bg-[#e60000] h-96 md:h-46 lg:h-48 text-center -mt-12">
+
+    </div>
+    <!-- map section end here -->
+
+    <!-- follow us section with fa-icon -->
+    <div class="bg-[#e60000] h-48  text-center " id="followUs">
+        <p class="font-semibold uppercase text-1xl tracking-[5px] text-white">Follow Us</p>
+
+
+        <ul class="grid grid-cols-5 my-9 w-80 mx-auto">
+            <li class=""><i
+                    class="fa-brands fa-facebook-f w-12 text-2xl p-2 ease-in duration-200 hover:bg-black   bg-white hover:text-white text-[#800000]"></i>
+            </li>
+            <li class=""><i
+                    class="fa-brands fa-twitter w-12  text-2xl p-2 ease-in duration-200 hover:bg-black   bg-white hover:text-white text-[#800000]"></i>
+            </li>
+            <li class=""><i
+                    class="fa-brands fa-instagram w-12 text-2xl p-2 ease-in duration-200 hover:bg-black   bg-white hover:text-white text-[#800000]"></i>
+            </li>
+            <li class=""><i
+                    class="fa-brands fa-youtube w-12 text-2xl p-2 ease-in duration-200 hover:bg-black   bg-white hover:text-white text-[#800000]"></i>
+            </li>
+            <li class=""><i
+                    class="fa-brands fa-linkedin w-12  text-2xl p-2 ease-in duration-200 hover:bg-black   bg-white hover:text-white text-[#800000]"></i>
+            </li>
+        </ul>
+
+
+    </div>
+    </section>
+    <!-- Maps & Contact Us Section End -->
+
+    <!-- Footer Section-->
+    <footer class="bg-[#e6dfdf] text-[#e60000]  border-black  ">
+        <div class="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-0 py-2 md:py-16 ">
+            <div class="p-10 md:p-10 md:px-10  grid place-items-center md:place-items-start  mt-10 md:mt-0 lg:mt-0">
+                <img src="images/mainlogo.png" alt=""
+                    class="w-72 sm:w-72  md:w-36 lg:w-36 -mt-10">
+                <h1 class="my-0 text-center md:text-left">Lorem ipsum dolor sit amet, consec tetur
+                    adipiscing
+                    elit.</h1>
+                <span class="flex justify-start gap-5 mt-4 md:mt-0 lg:mt-0 md:gap-2 lg:gap-5 py-2 text-[#e60000]">
+                    <i
+                        class="fa-brands fa-facebook-f  w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                    <i
+                        class="fa-brands fa-twitter w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                    <i
+                        class="fa-brands fa-youtube w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                    <i
+                        class="fa-brands fa-facebook-messenger  w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200 "></i>
+                </span>
+            </div>
+            <div class=" p-5  md:p-5  border-black text-center  md:text-left mx-0 md:mx-auto ">
+                <h1 class="text-xl  md:text-2xl lg:text-2xl font-bold text-[#e60000]">Contacts</h1>
+                <p class="my-0 mt-4">+1 (234) 567 890</p>
+                <p class="my-0 mt-1">example@mail.com</p>
+                <h1 class="text-xl md:text-2xl lg:text-2xl font-bold my-2 mt-4 text-[#e60000]">Address</h1>
+                <p class="my-0 mt-4">323 Valley Lane, Austin</p>
+                <p class="my-0 mt-1">07.00 AM - 19.00 PM</p>
+            </div>
+            <div class="p-5  md:p-5 text-center md:text-left mx-0 md:mx-auto">
+                <h1 class="text-xl md:text-2xl lg:text-2xl font-bold text-[#e60000]">Explore</h1>
+                <ul class="text-md">
+                    <li class="my-0 mt-4"><a href="./index.html">HOME</a></li>
+                    <li class="my-0 md:my-2"><a href="./about.html">ABOUT</a></li>
+                    <li class="my-0 md:my-2"><a href="./programe.html">PROGRAM</a></li>
+                    <li class="my-0 md:my-2"><a href="./faq.html">FAQs</a></li>
+                    <li class="my-0 md:my-2"><a href="./blog.html">BLOG</a></li>
+                    <li class="my-0 md:my-2"><a href="./contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <div
+                class="p-0  md:p-5 md:w-[300%] lg:w-[100%] py-5  text-center md:text-center lg:text-left  md:mx-auto">
+                <h1 class="text-xl md:text-2xl lg:text-2xl font-bold text-[#e60000]">Lets Talk</h1>
+                <p class="my-0 mt-4">Phasellus eros neque, porta vitae vehicula non.</p>
+                <span>
+                    <button
+                        class=" mt-6  w-36 h-10 bg-[#e60000] text-white 
+                        hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500 ">Live
+                        Chat</button></span>
+            </div>
+        </div>
+        <div class="mb-12 text-center ">
+            <h1 class="text-2xl font-medium text-[#e60000]">NEWSLETTER</h1>
+            <span class="">
+                <input type="text"
+                    class="w-52 md:w-96 h-10 bg-transparent border border-[#e60000] my-10 outline-none">
+                <button
+                    class="w-36 font-medium h-10 bg-[#e60000] text-white 
+                 hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500  ">Subscribe</button>
+            </span>
+        </div>
+        <hr class="w-[100%]  border-[1.3px] border-[#e60000] ">
+        <div class="grid grid-cols-1 md:grid-cols-2 w-full text-[#e60000] flex-col-reverse md:flex-col-row p-3">
+            <h1 class=" md:ml-5 lg:ml-5 text-xs md:text-sm text-center md:text-left  py-1 md:py-2">Copyright © 2022
+                ASK
+                Project
+            </h1>
+            <div class="flex justify-around md:justify-end px-10 py-1  md:py-2 ">
+                <h1 class="px-5 hover:text-[#800000] text-xs md:text-sm    ">Privacy Policy</h1>
+                <h1 class="hover:text-[#800000] text-xs md:text-sm  ">Terms & conditions</h1>
+            </div>
+
+        </div>
+
+
+    </footer>
+    <script src="index.js"></script>
+</body>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>event page</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link rel="icon" href="./images/logo.jpg" type="image/icon type">
+  <style>
+    *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box ;  
+}
+#transparent{
+    -webkit-text-stroke: 2px white;
+}
+</style>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+            screen:{
+                'xs':'350px',// => @media (min-width: 350px) { ... }
+                'sm': '640px',// => @media (min-width: 640px) { ... }
+                'md': '768px',// => @media (min-width: 768px) { ... }               
+                'lg': '1024px',// => @media (min-width: 1024px) { ... }
+                'xl': '1280px',// => @media (min-width: 1280px) { ... }
+                '2xl': '1536px',// => @media (min-width: 1536px) { ... }
+            },
+            colors: {
+          }
+        }
+      }
+    }
+</script>
+</head>
+<body class="bg-white">
+<!-- navbar section -->
+<div class=" h-[200px] sm:h-[300px] relative  border-white ">
+
+    <!----------------------------------Landing Page start---------------------->
+    <div class="hidden sm:block py-1 px-5 grid grid-cols-3  h-10 bg-[#e60000] z-10 ">
+        <span class="grid grid-cols-2 text-white">
+            <p>ranner@mail.com</p>
+            <p>+1(234)567890</p>
+        </span>
+        <span class="-mt-4 md:py1 flex justify-end gap-6 pr-10  col-span-2 text-white">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-facebook-messenger"></i>
+        </span>
+    </div>
+    <div class="w-full grid grid-cols-2 md:grid-cols-3 z-20 absolute  ">
+        <div class="sticky  " id="logo">
+            <img src="images/mainlogo.png" alt="" width="150px" class=" absolute">
+        </div>
+        <ul class="hidden  -mx-24 md:mx-0 md:flex justify-between gap-5 mt-4 text-white font-bold  ">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li onmouseover="dropdown1()" onmouseout="dropdown1End()"><a href="">Programs
+                <div class="bg-black/75 p-5 absolute" id="programMenu" style="display:none;">
+                    <ul class=" text-zinc-100 font-normal  ">
+                        <li><a href="./programe.html" class="hover:text-[#e60000]">Program</a></li>
+                        <li><a href="./program_detail.html" class="hover:text-[#e60000]">Program Details</a></li>
+                    </ul>
+                </div>
+            </li>
+            </a>    
+            <li onmouseover="dropdown2()" onmouseout="dropdown2End()"><a href="">Pages</a>
+                <div class="bg-black/75 p-5 absolute " id="pagesMenu" style="display:none;">
+                    <ul class=" text-zinc-100 font-normal  ">
+                        <li><a href="./events.html" class="hover:text-[#e60000]">Event</a></li>
+                        <li><a href="./faq.html" class="hover:text-[#e60000]">FAQs</a></li>
+                        <li><a href="./pricing.html" class="hover:text-[#e60000]">Pricing</a></li>
+                        <li><a href="./process.html" class="hover:text-[#e60000]">Process</a></li>
+                        <li><a href="./team.html" class="hover:text-[#e60000]">Team</a></li>
+                        <li><a href="./blog.html" class="hover:text-[#e60000]">Blog</a></li>
+                        <li><a href="./single_post.html" class="hover:text-[#e60000]">Single Page</a></li>
+                        <li><a href="" class="hover:text-[#e60000]">404 Page</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="./contact.html">Contacts</a></li>
+        </ul>
+        <div class="">
+            <button class="hidden md:block  bg-white text-[#e60000] w-24 h-8 mr-10 mt-2 float-right">Sign
+                Up</button>
+            <button class="block md:hidden text-white text-2xl h-8 mr-10 mt-2 float-right" onclick="menuOpen()"
+                id="bar"><i class="fa-solid fa-bars sticky "></i></button>
+        </div>
+    </div>
+    <div class="top-[20%]  pl-3 md:pl-10 absolute text-center text-white w-full md:my-10 " id="landingText">
+        <h1 class="text-3xl font-medium sm:text-5xl md:text-6xl font-bold my-6">OUR EVENTS</h1>
+        <H1 class="text-xl sm:text-2xl md:text-3xl font-medium">HOME
+            <i class="fa-sharp fa-solid fa-stop text-[#e60000] text-xl sm:text-2xl md:text-3xl"></i>
+            PROCESS
+        </H1>
+
+    </div>
+    <!-----------------------menu on click (responsive )------------------>
+    <div class="overflow-auto  w-full absolute  bg-black/75 h-full  md:hidden" id="nav" style="left:-100%;transition: .5s;">
+        <div class="pt-10 px-20 float-left  w-[80%]">
+            <img src="images/mainlogo.png" alt="" width="150px" class="">
+        </div>
+        <div class="float-left w-10 pt-10 text-2xl text-[#e60000] ">
+            <i class="fa-solid fa-xmark " onclick="menuClose()"></i>
+        </div>
+        <ul class="mx-24 mt-20">
+            <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./index.html">Home</a></li>
+            <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./about.html">About</a></li>
+            <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Programs</a></li>
+            <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Pages</a></li>
+            <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Contacts</a></li>
+        </ul>
+    </div>
+    <!-----------------------menu on click end------------------>
+
+    <div class="h-full bg-cover bg-fixed "
+        style="background-image:linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(images/10039.jpg);">
+    </div>
+</div>
+<section class="bg-white  mt-2 sm:mt-10">
+        <div class="px-10 grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-start pt-0 md:mx-24">
+            <div class=" md:col-span-2 py-5">
+                <h1 class="text-[#800000] text-2xl tracking-[4px]">Our event</h1>
+            </div>
+            <div class="text-center md:text-left">
+                <h1 class="text-2xl md:text-4xl text-[#e60000] tracking-[5px] font-bold ">JOIN OUR SPORTS EVENTS</h1>
+            </div>
+            <div class="w-full grid place-content-center md:place-content-end">
+                <button class=" bg-[#e60000] w-32 h-8 text-md border-0 border-black  ">All Events</button>
+            </div>           
+        </div>
+</section>
+
+<!--our event section-->
+<section>
+    <div class="bg-[#e6dfdf] py-0 md:py-10">
+       
+            <!--------------------event ticket section----------------------> 
+            <div class=" px-5 py-5"> 
+                <div class=" bg-[#e60000] text-white text-center grid grid-cols-1 md:grid-cols-5 md:mx-16" data-aos="fade-up" data-aos-duration="1000">
+                    <div class=" h-[250px] bg-cover" style="background-image: url(images/10013.jpg);">            
+                    </div>
+
+                    <div class="text-center px-0 md:px-10 grid items-center py-5 md:py-10  md:col-span-2">
+                       <p class="text-[#800000]">NEW YOR <span class="text-[#800000]">----</span> CITY HALL</p>
+                        <h1 class="text-xl  md:text-2xl font-bold uppercase">sunday morning jogging</h1>
+                        <div class="grid grid-cols-2 sm:grid-cols-3  md:flex justify-between ">
+                            <p><i class="fa-solid fa-users text-xl text-[#800000]"></i>&nbsp;&nbsp;  GENERAL</p>
+                            <p><i class="fa-solid fa-clock text-xl text-[#800000]"></i>&nbsp;&nbsp;  6AM - 11AM</p>
+                            <p><i class="fa-solid fa-ticket text-xl text-[#800000]"></i>&nbsp;&nbsp;$55/PERSON</p>
+                        </div>
+                    </div>
+                    <div class="grid py-5 md:py-10 items-center border-0 border-white px-5 ">
+                        <div class="grid items-center w-full h-full border-[1px] border-white border-dashed  px-5" style="border-top: 0px; border-bottom: 0px;">
+                        <h1 class="text-5xl font-bold text-white  ">NOV 20</h1>
+                        </div>
+                    </div>
+                    <div class="grid items-center justify-center my-5 md:my-0 "> 
+                        <button class="w-28 h-10 bg-white text-black ">Buy Ticket</button> 
+                    </div>
+                    
+                </div>
+
+                <div class=" bg-[#e60000] text-white text-center grid grid-cols-1 md:grid-cols-5 my-5 md:mx-16" data-aos="fade-up">
+                    <div class=" h-[250px] bg-cover" style="background-image: url(images/10073.jpg);">            
+                    </div>
+
+                    <div class="text-center px-0 md:px-10 grid items-center py-5 md:py-10  md:col-span-2">
+                       <p class="text-[#800000]">NEW YOR <span class="text-[#800000]">----</span> CITY HALL</p>
+                        <h1 class="text-xl  md:text-2xl font-bold ">HILL CLIMB MARATHON</h1>
+                        <div class="grid grid-cols-2 sm:grid-cols-3  md:flex justify-between ">
+                            <p><i class="fa-solid fa-users text-xl text-[#800000]"></i>&nbsp;&nbsp;  GENERAL</p>
+                            <p><i class="fa-solid fa-clock text-xl text-[#800000]"></i>&nbsp;&nbsp;  6AM - 11AM</p>
+                            <p><i class="fa-solid fa-ticket text-xl text-[#800000]"></i>&nbsp;&nbsp;$55/PERSON</p>
+                        </div>
+                    </div>
+                    <div class="grid py-5 md:py-10 items-center border-0 border-white px-5 ">
+                        <div class="grid items-center w-full h-full border-[1px] border-white border-dashed  px-5" style="border-top: 0px; border-bottom: 0px;">
+                        <h1 class="text-5xl font-bold text-white  ">NOV 20</h1>
+                        </div>
+                    </div>
+                    <div class="grid items-center justify-center my-5 md:my-0"> 
+                        <button class="w-28 h-10 bg-white text-black ">Buy Ticket</button> 
+                    </div>
+                    
+                </div>
+                <div class=" bg-[#e60000] text-white text-center grid grid-cols-1 md:grid-cols-5 md:mx-16" data-aos="fade-up">
+                    <div class=" h-[250px] bg-cover" style="background-image: url(images/10014.jpg);">            
+                    </div>
+
+                    <div class="text-center px-0 md:px-10 grid items-center py-5 md:py-10  md:col-span-2">
+                        <p class="text-[#800000]">NEW YOR <span class="text-[#800000]">----</span> CITY HALL</p>
+                        <h1 class="text-xl  md:text-2xl font-bold ">SPRINT RUNNING EVENT</h1>
+                        <div class="grid grid-cols-2 sm:grid-cols-3  md:flex justify-between ">
+                            <p><i class="fa-solid fa-users text-xl text-[#800000]"></i>&nbsp;&nbsp;  GENERAL</p>
+                            <p><i class="fa-solid fa-clock text-xl text-[#800000]"></i>&nbsp;&nbsp;  6AM - 11AM</p>
+                            <p><i class="fa-solid fa-ticket text-xl text-[#800000]"></i>&nbsp;&nbsp;$55/PERSON</p>
+                        </div>
+                    </div>
+                    <div class="grid py-5 md:py-10 items-center  px-5 ">
+                        <div class="grid items-center w-full h-full border-[1px] border-white border-dashed  px-5" style="border-top: 0px; border-bottom: 0px;">
+                        <h1 class="text-5xl font-bold text-white  ">NOV 20</h1>
+                        </div>
+                    </div>
+                    <div class="grid items-center justify-center my-5 md:my-0"> 
+                        <button class="w-28 h-10 bg-white text-black ">Buy Ticket</button> 
+                    </div>
+                    
+                </div>
+            </div>
+        </div><!--check this one-->
+    </div>
+</section>
+<section>
+    <div class="w-4/6 mx-auto my-24">
+        <p class="text-center text-[#800000] my-4 leading-tight tracking-[5px]">OUR SPONSORS</p>
+      <h1 class="lg:text-5xl md:text-4xl  text-2xl font-bold text-center text-[#e60000] tracking-[2px]" data-aos="fade-up">SPORTSMAN IS WHAT WE DO</h1>
+    </div>
+</section>
+<section>
+    <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 px-22  px-16 md:px-16 gap-5 brightness-50 max-w-[1150px] mx-auto md:mx-16">
+            <img src="images/10016.png" alt="" class="p-4  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10017.png" alt="" class="  p-4  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10018.png" alt="" class=" p-4 brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10020.png" alt="" class=" p-4   brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10022.png" alt="" class=" p-4  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10024.png" alt="" class="  p-4 brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10026.png" alt="" class="  p-4 brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10027.png" alt="" class=" p-4 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500 mb-12">
+        </div>
+</section>
+
+<!--carousel part-->
+
+<section>
+<!-- component -->
+<!-- This is an example component -->
+    <div class="lg:max-w-6xl md:max-w-3xl w-2xl lg:mx-auto md:mx-auto mx-8 bg-[#e60000] ">
+
+       <div id="default-carousel " class="relative" data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="overflow-hidden relative mx-12 h-[400px] lg:h-96 md:h-96">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out " data-carousel-item>
+                <div>
+                    <div class="">
+                            <div class="w-24 mx-auto py-4">      
+                               <img src="images/10028.jpg" class="rounded-full w-24 h-24 ">
+                            </div>
+                            <p class="text-2xl text-center">NAME</p>
+                            <p class="text-center">Runner</p>
+                    </div>
+                    <div class="max-w-[800px] mx-auto my-4">
+                      <p class="text-center lg:text-2xl md:text-1xl text-[#800000]">Basic contact form for simple website. Responsive and only on tailwind foundation. Change button background to primary !
+                      Basic contact form for simple website. Responsive and only on tailwind foundation. Change button background to primary !</p>  
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div>
+                    <div class="">
+                            <div class="w-24 mx-auto py-4">      
+                               <img src="images/10028.jpg" class="rounded-full w-24 h-24 ">
+                            </div>
+                            <p class="text-2xl text-center">NAME</p>
+                            <p class="text-center">Runner</p>
+                    </div>
+                    <div class="max-w-[800px] mx-auto my-4">
+                      <p class="text-center lg:text-2xl md:text-1xl text-[#800000]">Basic contact form for simple website. Responsive and only on tailwind foundation. Change button background to primary !
+                      Basic contact form for simple website. Responsive and only on tailwind foundation. Change button background to primary !</p>  
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out " data-carousel-item>
+                <div>
+                    <div class="">
+                            <div class="w-24 mx-auto py-4">      
+                               <img src="images/10028.jpg" class="rounded-full w-24 h-24 ">
+                            </div>
+                            <p class="text-2xl text-center">NAME</p>
+                            <p class="text-center">Runner</p>
+                    </div>
+                    <div class="max-w-[800px] mx-auto my-4">
+                      <p class="text-center lg:text-2xl md:text-1xl text-[#800000]">Basic contact form for simple website. Responsive and only on tailwind foundation. Change button background to primary !
+                      Basic contact form for simple website. Responsive and only on tailwind foundation. Change button background to primary !</p>  
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Slider indicators -->
+        <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="hidden">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <span class="hidden">Next</span>
+            </span>
+        </button>
+        </div>
+     </div>  
+</section>
+<section class="bg-[url('images/10019.jpg')] lg:h-[900px] md:h-[900px]  h-[1200px]  bg-center bg-no-repeat bg-cover">
+    <div class="bg-[#e6dfdf]/75">
+      <div class="w-4/6 mx-auto my-24">
+          <p class="text-center text-[#800000] my-4 pt-24 tracking-[5px] lg:mt-0 md:mt-0   mt-24">START RUNNING</p>
+          <p class="text-center text-[#e60000] font-bold text-4xl ">WORK HARD, RUNNING HARDER</p>
+          <div class="text-center">
+              <button class="rounded-none bg-white px-4 py-2 mx-auto lg:mt-[90px] md:mt-[90px] mt-4">GET STARTED</button>
+          </div>
+      </div>
+      <div class="grid  lg:grid-cols-2 md:grid-cols-2 grid-cols-1 max-w-[1100px] mx-auto text-white">
+            <div class="order-2 lg:order-1 md:order-1 lg:mt-0 md:mt-0 mt-[100px]">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9934.141989196121!2d-0.11779400000000001!3d51.503391!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2slastminute.com%20London%20Eye!5e0!3m2!1sen!2sus!4v1681386107654!5m2!1sen!2sus" class="w-[300px] lg:w-[580px] md:w-[400px] h-[400px] lg:h-[550px] md:h-[550px] lg:mx-auto md:mx-40 ml-8 lg:ml-0 md:ml-7  lg:mt-0 md:mt-0 " style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class=" lg:px-6 md:px-4 mx-8 order-1 lg:order-2 md:order-2 bg-black/50">
+              <h2 class="text-2xl font-bold mb-12 mt-4 text-center mx-8">SIGNUP TODAY FOR SPECIAL OFFER!</h2>
+              <form class="px-8">
+                <div class="flex flex-wrap -mx-3 mb-6">
+                   <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                         <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
+                         First Name
+                         </label>
+                          <input class=" block w-full text-gray-700 py-3 px-4 mb-3 leading-tight  bg-transparent border border-red-700" id="grid-first-name" type="text" placeholder="Jane">
+                    </div>
+                    <div class="w-full md:w-1/2 px-3">
+                             <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
+                              Last Name
+                            </label>
+                            <input class="appearance-none block w-full text-gray-700  py-3 px-4 leading-tight bg-transparent border border-red-700" id="grid-last-name" type="text" placeholder="Doe">
+                    </div>
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                             <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
+                                E-mail
+                            </label>
+                            <input class="appearance-none block w-full text-gray-700 border py-3 px-4 mb-3 leading-tight bg-transparent border border-red-700 " id="email" type="email" placeholder="example@gmail.com">
+                        </div>
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full px-3">
+                         <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
+                             Message
+                         </label>
+                        <textarea class=" block w-full text-gray-700 py-3 px-4 mb-3 leading-tight bg-transparent border border-red-700 h-24 resize-none"  placeholder="MESSAGE">
+                        </textarea>
+                    </div>
+                </div>
+                    <p class="lg:ml-12 md:ml-12 lg:ml-32 mx-auto pb-4">
+                        <button class="rounded-none bg-white px-4 py-2 text-black">SUBMIT FORM</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section> 
+
+
+<section>
+    <!-- follow us section with fa-icon -->
+    <div class="text-center lg:py-[100px] md:py-[100px] py-[100px] bg-[#e60000] lg:h-[300px] md:h-[300px] h-[500px] mt-64 lg:mt-0 md:mt-0">
+        <p class="font-medium text-2xl lg:py-4 md:py-6 py-2 mt-[100px] lg:mt-[20px] md:mt-[20px] text-white">Follow Us</p>
+
+
+        <ul class="grid  grid-cols-5 my-10 lg:w-96 md:w-96 :w-80 lg:mx-auto md:mx-auto mx-8">
+            <li class=""><i
+                    class="fa-brands fa-facebook-f w-12 hover:bg-white text-2xl p-2 bg-[#e6dfdf] hover:text-black text-[#800000]"></i>
+            </li>
+            <li class=""><i
+                    class="fa-brands fa-twitter w-12 hover:bg-white text-2xl p-2 bg-[#e6dfdf] hover:text-black text-[#800000]"></i>
+            </li>
+            <li class=""><i
+                    class="fa-brands fa-instagram w-12 hover:bg-white text-2xl p-2 bg-[#e6dfdf] hover:text-black text-[#800000]"></i>
+            </li>
+            <li class=""><i
+                    class="fa-brands fa-youtube w-12 hover:bg-white text-2xl p-2 bg-[#e6dfdf] hover:text-black text-[#800000]"></i>
+            </li>
+            <li class=""><i
+                    class="fa-brands fa-linkedin w-12 hover:bg-white text-2xl p-2 bg-[#e6dfdf] hover:text-black text-[#800000]"></i>
+            </li>
+        </ul>
+
+
+    </div>
+</section>
+<section>
+    <!---------------------------footer------------------------>
+    <footer class="bg-[#e6dfdf] text-[#e60000]  border-black  ">
+        <div class="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-0 py-2 md:py-16 ">
+            <div class="p-10 md:p-10 md:px-10  grid place-items-center md:place-items-start  mt-10 md:mt-0 lg:mt-0">
+                <img src="images/mainlogo.png" alt=""
+                    class="w-72 sm:w-72  md:w-36 lg:w-36 -mt-10">
+                <h1 class="my-0 text-center md:text-left">Lorem ipsum dolor sit amet, consec tetur
+                    adipiscing
+                    elit.</h1>
+                <span class="flex justify-start gap-5 mt-4 md:mt-0 lg:mt-0 md:gap-2 lg:gap-5 py-2 text-[#e60000]">
+                    <i
+                        class="fa-brands fa-facebook-f  w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                    <i
+                        class="fa-brands fa-twitter w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                    <i
+                        class="fa-brands fa-youtube w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                    <i
+                        class="fa-brands fa-facebook-messenger  w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200 "></i>
+                </span>
+            </div>
+            <div class=" p-5  md:p-5  border-black text-center  md:text-left mx-0 md:mx-auto ">
+                <h1 class="text-xl  md:text-2xl lg:text-2xl font-bold text-[#e60000]">Contacts</h1>
+                <p class="my-0 mt-4">+1 (234) 567 890</p>
+                <p class="my-0 mt-1">example@mail.com</p>
+                <h1 class="text-xl md:text-2xl lg:text-2xl font-bold my-2 mt-4 text-[#e60000]">Address</h1>
+                <p class="my-0 mt-4">323 Valley Lane, Austin</p>
+                <p class="my-0 mt-1">07.00 AM - 19.00 PM</p>
+            </div>
+            <div class="p-5  md:p-5 text-center md:text-left mx-0 md:mx-auto">
+                <h1 class="text-xl md:text-2xl lg:text-2xl font-bold text-[#e60000]">Explore</h1>
+                <ul class="text-md">
+                    <li class="my-0 mt-4"><a href="./index.html">HOME</a></li>
+                    <li class="my-0 md:my-2"><a href="./about.html">ABOUT</a></li>
+                    <li class="my-0 md:my-2"><a href="./programe.html">PROGRAM</a></li>
+                    <li class="my-0 md:my-2"><a href="./faq.html">FAQs</a></li>
+                    <li class="my-0 md:my-2"><a href="./blog.html">BLOG</a></li>
+                    <li class="my-0 md:my-2"><a href="./contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <div
+                class="p-0  md:p-5 md:w-[300%] lg:w-[100%] py-5  text-center md:text-center lg:text-left  md:mx-auto">
+                <h1 class="text-xl md:text-2xl lg:text-2xl font-bold text-[#e60000]">Lets Talk</h1>
+                <p class="my-0 mt-4">Phasellus eros neque, porta vitae vehicula non.</p>
+                <span>
+                    <button
+                        class=" mt-6  w-36 h-10 bg-[#e60000] text-white 
+                        hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500 ">Live
+                        Chat</button></span>
+            </div>
+        </div>
+        <div class="mb-12 text-center ">
+            <h1 class="text-2xl font-medium text-[#e60000]">NEWSLETTER</h1>
+            <span class="">
+                <input type="text"
+                    class="w-52 md:w-96 h-10 bg-transparent border border-[#e60000] my-10 outline-none">
+                <button
+                    class="w-36 font-medium h-10 bg-[#e60000] text-white 
+                 hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500  ">Subscribe</button>
+            </span>
+        </div>
+        <hr class="w-[100%]  border-[1.3px] border-[#e60000] ">
+        <div class="grid grid-cols-1 md:grid-cols-2 w-full text-[#e60000] flex-col-reverse md:flex-col-row p-3">
+            <h1 class=" md:ml-5 lg:ml-5 text-xs md:text-sm text-center md:text-left  py-1 md:py-2">Copyright © 2022
+                ASK
+                Project
+            </h1>
+            <div class="flex justify-around md:justify-end px-10 py-1  md:py-2 ">
+                <h1 class="px-5 hover:text-[#800000] text-xs md:text-sm    ">Privacy Policy</h1>
+                <h1 class="hover:text-[#800000] text-xs md:text-sm  ">Terms & conditions</h1>
+            </div>
+    
+        </div>
+    
+    
+    </footer>
+</section>
+    <!-- follow us section with fa-icon enf here -->
+<script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="index.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</html>

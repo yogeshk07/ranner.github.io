@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>faq page</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link rel="icon" href="./images/logo.jpg" type="image/icon type">
+ 
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+            screen:{
+                'xs':'350px',// => @media (min-width: 350px) { ... }
+                'sm': '640px',// => @media (min-width: 640px) { ... }
+                'md': '768px',// => @media (min-width: 768px) { ... }               
+                'lg': '1024px',// => @media (min-width: 1024px) { ... }
+                'xl': '1280px',// => @media (min-width: 1280px) { ... }
+                '2xl': '1536px',// => @media (min-width: 1536px) { ... }
+            },
+            colors: {
+          }
+        }
+      }
+    }
+</script>
+  <style>
+    *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box ;  
+}
+    .training{
+        animation: training 1s linear forwards;
+    }
+    .award{
+        animation: award 1s linear forwards;
+    }
+    .comptition{
+        animation: comptition 1s linear forwards;
+    }
+    .review{
+        animation: review 1s linear forwards;
+    }
+    @keyframes training{
+        100%{
+            width: 95%;
+        }
+    }
+    @keyframes award{
+        100%{
+            width: 75%;
+        }
+    }
+    @keyframes comptition{
+        100%{
+            width: 43%;
+        }
+    }
+    @keyframes review{
+        100%{
+            width: 25%;
+        }
+    }
+</style>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+            screen:{
+                'xs':'350px',// => @media (min-width: 350px) { ... }
+                'sm': '640px',// => @media (min-width: 640px) { ... }
+                'md': '768px',// => @media (min-width: 768px) { ... }               
+                'lg': '1024px',// => @media (min-width: 1024px) { ... }
+                'xl': '1280px',// => @media (min-width: 1280px) { ... }
+                '2xl': '1536px',// => @media (min-width: 1536px) { ... }
+            },
+            colors: {
+          }
+        }
+      }
+    }
+</script>
+</head>
+<body class="bg-white">
+<!-- navbar section -->
+<section>
+    <div class="h-[300px] md:h-[250px] lg:h-[250px]  relative " >  
+  
+        <!----------------------------------Landing Page start---------------------->
+            <div class="hidden md:block py-1 px-5 grid grid-cols-3  h-10 bg-[#e60000] z-10 ">
+                <span class="grid grid-cols-2  text-white">
+                    <p>ranner@mail.com</p>
+                    <p>+1(234)567890</p>
+                </span>
+                <span class="-mt-3 md:py1 flex justify-end gap-6 pr-10  col-span-2 text-white">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-facebook-messenger"></i>
+                </span>
+            </div>        
+            <div class="w-full grid grid-cols-2 md:grid-cols-3 z-20 absolute  ">
+                <div class="sticky  " id="logo">
+                    <img src="images/mainlogo.png" alt="" width="150px" class="absolute">
+                </div>
+                <ul class="hidden  -mx-24 md:mx-0 md:flex justify-between gap-5 mt-4 text-white font-bold  ">
+                    <li><a href="">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li onmouseover="dropdown1()" onmouseout="dropdown1End()"><a href="">Programs
+                        <div class="bg-black/75 p-5 absolute" id="programMenu" style="display:none;">
+                            <ul class=" text-zinc-100 font-normal  ">
+                                <li><a href="./programe.html" class="hover:text-[#e60000]">Program</a></li>
+                                <li><a href="./program_detail.html" class="hover:text-[#e60000]">Program Details</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    </a>    
+                    <li onmouseover="dropdown2()" onmouseout="dropdown2End()"><a href="">Pages</a>
+                        <div class="bg-black/75 p-5 absolute " id="pagesMenu" style="display:none;">
+                            <ul class=" text-zinc-100 font-normal  ">
+                                <li><a href="./events.html" class="hover:text-[#e60000]">Event</a></li>
+                                <li><a href="./faq.html" class="hover:text-[#e60000]">FAQs</a></li>
+                                <li><a href="./pricing.html" class="hover:text-[#e60000]">Pricing</a></li>
+                                <li><a href="./process.html" class="hover:text-[#e60000]">Process</a></li>
+                                <li><a href="./team.html" class="hover:text-[#e60000]">Team</a></li>
+                                <li><a href="./blog.html" class="hover:text-[#e60000]">Blog</a></li>
+                                <li><a href="./single_post.html" class="hover:text-[#e60000]">Single Page</a></li>
+                                <li><a href="" class="hover:text-[#e60000]">404 Page</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="./contact.html">Contacts</a></li>
+                </ul>
+                <div class="">
+                    <button class="hidden md:block  bg-white text-[#e60000] w-24 h-8 mr-10 mt-2 float-right">Sign
+                        Up</button>
+                    <button class="block md:hidden text-white text-2xl h-8 mr-10 mt-2 float-right" onclick="menuOpen()"
+                        id="bar"><i class="fa-solid fa-bars sticky "></i></button>
+                </div>
+            </div>
+            <div class="top-[20%]  pl-3 md:pl-10 absolute text-center text-white w-full md:my-10 " id="landingText">
+                <h1 class="text-3xl font-medium sm:text-5xl md:text-4xl font-bold my-4 tracking-[5px] mt-4">FAQs PAGE</h1>
+                <H1 class="text-xl sm:text-xl md:text-2xl font-medium">HOME
+                 <i class="fa-sharp fa-solid fa-stop text-[#800000] text-xl sm:text-2xl md:text-3xl"></i>
+                 ABOUT</H1>
+                
+             </div> 
+            <!-----------------------menu on click (responsive )------------------>
+            <div class="overflow-auto  w-full absolute  bg-black/75 h-full  md:hidden" id="nav" style="left:-100%;transition: .5s;">
+                <div class="pt-10 px-20 float-left  w-[80%]">
+                    <img src="images/mainlogo.png" alt="" width="150px" class="">
+                </div>
+                <div class="float-left w-10 pt-10 text-2xl text-[#e60000] ">
+                    <i class="fa-solid fa-xmark " onclick="menuClose()"></i>
+                </div>
+                <ul class="mx-24 mt-20">
+                    <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./index.html">Home</a></li>
+                    <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./about.html">About</a></li>
+                    <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Programs</a></li>
+                    <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Pages</a></li>
+                    <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Contacts</a></li>
+                </ul>
+            </div>
+        <!-----------------------menu on click end------------------>
+           
+            <div class="h-full bg-cover bg-fixed " style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(images/10037.jpg);" ></div>
+            
+        
+    </div>
+
+
+</section>
+<section class="my-12 bg-white">
+        <div class="px-10 text-center pt-0">
+            <div class=" md:col-span-2 py-5">
+                <h1 class="text-[#800000] text-2xl tracking-[4px]">FAQS</h1>
+            </div>
+            <div class="">
+                <h1 class="text-2xl md:text-4xl text-[#e60000] tracking-[5px] font-bold text-center mb-8">FREQUENTLY ASKED <br>QUESTIONS
+                </h1>
+            </div>          
+        </div>
+</section>
+<section class="my-24 bg-white">
+    <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  max:h-[900px] lg:mx-auto md:mx-auto max-w-[1200px] ml-12 text-[#800000]">
+        <div class="flex flex-wrap justify-start overflow-hidden text-[#800000] mx-2">
+             <label class="grow px-4  font-medium" for="collapse">WHAT WE HAVE TO OFFER</label>
+             <input class="peer mx-4 my-3 h-0 w-0 appearance-none rounded border text-slate-800  opacity-0" type="checkbox" name="collapse" id="collapse" />
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-4 my-3 h-6 w-6 transition-all duration-200 peer-checked:rotate-45">
+             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+             </svg>
+            <div class="-transparent absolute -translate-y-40 opacity-0 transition-all duration-200 peer-checked:relative peer-checked:translate-y-0 peer-checked:scale-100 peer-checked:opacity-100 mx-4">
+             Quisque consequat facilisis tellus id fringilla. Pellentesque et tortor vitae tortor feugiat tempor vel vitae dui. Praesent bibendum interdum leo. Aenean quis mattis diam, id maximus diam.
+            </div>
+       </div>
+       <div class="flex flex-wrap justify-start overflow-hidden  text-[#800000] mx-2">
+         <label class="grow px-4 h-[40px] font-medium" for="collapse2">HEALTHY BODY TIPS TRICKs</label>
+         <input class="peer mx-4 h-0 w-0 appearance-none rounded border text-slate-800 accent-slate-600 opacity-0" type="checkbox" name="collapse2" id="collapse2" />
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-4 my-3 h-6 w-6 transition-all duration-200 peer-checked:rotate-45">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+         </svg>
+         <div class="-transparent absolute -translate-y-full opacity-0 transition-all duration-200 peer-checked:relative peer-checked:translate-y-0 peer-checked:scale-100 peer-checked:scale-y-100 peer-checked:opacity-100 max-h-[100px] -mt-4 mx-4">Quisque consequat facilisis tellus id fringilla. Pellentesque et tortor vitae tortor feugiat tempor vel vitae dui. Praesent bibendum interdum leo. Aenean quis mattis diam, id maximus diam.
+         </div>
+       </div>
+       <div class="flex flex-wrap justify-start overflow-hidden text-[#800000] mx-2">
+             <label class="grow px-4  font-medium" for="collapse7">WHAT WE HAVE TO OFFER</label>
+             <input class="peer mx-4 my-3 h-0 w-0 appearance-none rounded border text-slate-800  opacity-0" type="checkbox" name="collapse7" id="collapse7" />
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-4 my-3 h-6 w-6 transition-all duration-200 peer-checked:rotate-45">
+             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+             </svg>
+            <div class="-transparent absolute -translate-y-40 opacity-0 transition-all duration-200 peer-checked:relative peer-checked:translate-y-0 peer-checked:opacity-100 max-h-[100px] -mt-4 mx-4">
+             Quisque consequat facilisis tellus id fringilla. Pellentesque et tortor vitae tortor feugiat tempor vel vitae dui. Praesent bibendum interdum leo. Aenean quis mattis diam, id maximus diam.
+            </div>
+       </div>
+       <div class="flex flex-wrap justify-start overflow-hidden  text-[#800000] mx-2">
+         <label class="grow px-4 h-[40px] font-medium" for="collapse8">HEALTHY BODY TIPS TRICKs</label>
+         <input class="peer mx-4 h-0 w-0 appearance-none rounded border text-slate-800 accent-slate-600 opacity-0" type="checkbox" name="collapse8" id="collapse8" />
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-4 my-3 h-6 w-6 transition-all duration-200 peer-checked:rotate-45">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+         </svg>
+         <div class="-transparent absolute -translate-y-full opacity-0 transition-all duration-200 peer-checked:relative peer-checked:translate-y-0 peer-checked:scale-100 peer-checked:scale-y-100 peer-checked:opacity-100 max-h-[100px] -mt-4 mx-4">Quisque consequat facilisis tellus id fringilla. Pellentesque et tortor vitae tortor feugiat tempor vel vitae dui. Praesent bibendum interdum leo. Aenean quis mattis diam, id maximus diam.
+         </div>
+       </div>
+       <div class="flex flex-wrap justify-start overflow-hidden text-[#800000] mx-2">
+             <label class="grow px-4  font-medium" for="collapse3">WHAT WE HAVE TO OFFER</label>
+             <input class="peer mx-4 my-3 h-0 w-0 appearance-none rounded border text-slate-800  opacity-0" type="checkbox" name="collapse3" id="collapse3" />
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-4 my-3 h-6 w-6 transition-all duration-200 peer-checked:rotate-45">
+             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+             </svg>
+            <div class="-transparent absolute -translate-y-40 opacity-0 transition-all duration-200 peer-checked:relative peer-checked:translate-y-0 peer-checked:scale-100 peer-checked:opacity-100 max-h-[100px] -mt-4 mx-4">
+             Quisque consequat facilisis tellus id fringilla. Pellentesque et tortor vitae tortor feugiat tempor vel vitae dui. Praesent bibendum interdum leo. Aenean quis mattis diam, id maximus diam.
+            </div>
+       </div>
+       <div class="flex flex-wrap justify-start overflow-hidden  text-[#800000] mx-2">
+         <label class="grow px-4 h-[40px] font-medium" for="collapse4">HEALTHY BODY TIPS TRICKs</label>
+         <input class="peer mx-4 h-0 w-0 appearance-none rounded border text-slate-800 accent-slate-600 opacity-0" type="checkbox" name="collapse4" id="collapse4" />
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-4 my-3 h-6 w-6 transition-all duration-200 peer-checked:rotate-45">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+         </svg>
+         <div class="-transparent absolute -translate-y-full opacity-0 transition-all duration-200 peer-checked:relative peer-checked:translate-y-0 peer-checked:scale-100 peer-checked:scale-y-100 peer-checked:opacity-100 max-h-[100px] -mt-4 mx-4">Quisque consequat facilisis tellus id fringilla. Pellentesque et tortor vitae tortor feugiat tempor vel vitae dui. Praesent bibendum interdum leo. Aenean quis mattis diam, id maximus diam.
+         </div>
+       </div>
+       <div class="flex flex-wrap justify-start overflow-hidden text-[#800000] mx-2">
+             <label class="grow px-4  font-medium" for="collapse5">WHAT WE HAVE TO OFFER</label>
+             <input class="peer mx-4 my-3 h-0 w-0 appearance-none rounded border text-slate-800  opacity-0" type="checkbox" name="collapse5" id="collapse5" />
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-4 my-3 h-6 w-6 transition-all duration-200 peer-checked:rotate-45">
+             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+             </svg>
+            <div class="-transparent absolute -translate-y-40 opacity-0 transition-all duration-200 peer-checked:relative peer-checked:translate-y-0 peer-checked:scale-100  peer-checked:opacity-100 mx-4">
+             Quisque consequat facilisis tellus id fringilla. Pellentesque et tortor vitae tortor feugiat tempor vel vitae dui. Praesent bibendum interdum leo. Aenean quis mattis diam, id maximus diam.
+            </div>
+       </div>
+       <div class="flex flex-wrap justify-start overflow-hidden  text-[#800000] mx-2">
+         <label class="grow px-4 h-[40px] font-medium" for="collapse6">HEALTHY BODY TIPS TRICKs</label>
+         <input class="peer mx-4 h-0 w-0 appearance-none rounded border text-slate-800 accent-slate-600 opacity-0" type="checkbox" name="collapse6" id="collapse6" />
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-4 my-3 h-6 w-6 transition-all duration-200 peer-checked:rotate-45">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+         </svg>
+         <div class="-transparent absolute -translate-y-full opacity-0 transition-all duration-200 peer-checked:relative peer-checked:translate-y-0 peer-checked:scale-100 peer-checked:scale-y-100  peer-checked:opacity-100 max-h-[100px] -mt-4 mb-4">Quisque consequat facilisis tellus id fringilla. Pellentesque et tortor vitae tortor feugiat tempor vel vitae dui. Praesent bibendum interdum leo. Aenean quis mattis diam, id maximus diam.
+         </div>
+       </div>
+    </div>
+</section>
+<!--progress bar start here-->
+<section class=" border bg-[#e6dfdf]">
+    <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1    lg:h-96 md:h-80 h-[940px] lg:mx-auto md:mx-auto mx-2">
+        <div class="">
+            <p class="text-[#800000] mt-12 lg:mx-24 md:mx-24 mx-12 tracking-[5px] font-bold text-center">OUR SKILLS</p>
+            <p class="lg:text-5xl  md:text-4xl text-2xl text-[#e60000] font-bold lg:leading-[60px] md:leading-[30px] leading-[30px] lg:mx-24 md:mx-24 mx-12 tracking-[2px]">BEST TRAINERS, BUILT FOR YOU</p>
+            <p class="tracking-[1px] mt-8 text-[#800000] lg:mx-24 md:mx-24 mx-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+        </div>
+        <div class="lg:mx-24 md:mx-24 mx-12 text-[#800000]">
+
+            <p class="text-[#800000] font-bold mt-10">AWARDS</p>
+            <div class="mb-6 h-1 w-full bg-neutral-200 dark:bg-neutral-600">
+                <div class="training h-1   text-right bg-[#e60000]  h-1" style="width:0%"><span">95%</span></div>
+            </div>
+
+            <p class="text-[#800000] font-bold mt-10">AWARDS</p>
+            <div class="mb-6 h-1 w-full bg-neutral-200 dark:bg-neutral-600">
+                <div class="award h-1 bg-[#e60000]  text-right" style="width:0%"><span">75%</span></div>
+            </div>
+            <p class="text-[#800000] font-bold mt-10">COMPETITION</p>
+            <div class="mb-6 h-1 w-full bg-neutral-200 dark:bg-neutral-600">
+                <div class="comptition h-1 text-right h-1 bg-[#e60000]" style="width:0%"><span>45%</span></div>
+            </div>
+            <p class="text-[#800000] font-bold mt-10">REVIEW</p>
+            <div class="mb-6 h-1 w-full bg-neutral-200 dark:bg-neutral-600">
+                <div class="review h-1  text-right bg-[#e60000]" style="width:0%"><span>25%</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--end progress bar-->
+<section class="bg-[url('images/10049.jpg')] h-[900px]  bg-center bg-no-repeat bg-cover">
+    <div class="">
+      <div class="w-4/6 mx-auto -mt-4">
+          <p class="text-center text-[#800000] my-4 pt-24 tracking-[5px]">START RUNNING</p>
+          <h1 class="text-5xl text-center text-[#e60000] font-bold" data-aos="fade-up">WORK HARD, RUNNING HARDER</h1>
+          <div class="text-center">
+              <button class="rounded-none bg-[#e60000] text-white 
+              hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] px-4 py-2 mx-auto mt-[90px] mb-10">GET STARTED</button>
+          </div>
+      </div>
+      <div class="grid  lg:grid-cols-2 md:grid-cols-2 grid-cols-1 max-w-[1100px] mx-auto text-[#800000]">
+            <div class="order-2 lg:order-1 md:order-1">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9934.141989196121!2d-0.11779400000000001!3d51.503391!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2slastminute.com%20London%20Eye!5e0!3m2!1sen!2sus!4v1681386107654!5m2!1sen!2sus" class="w-[300px] lg:w-[800px] md:w-[680px] h-[300px] lg:h-[550px] lg:mx-auto md:mx-auto ml-8 lg:ml-0 md:ml-0 mt-64 lg:mt-0 md:mt-0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class=" lg:px-6 md:px-4  bg-[#e6dfdf] sm:mx-8 order-1 lg:order-2 md:order-2 ">
+              <h2 class="text-2xl font-bold mb-12 mt-4 text-center mx-8 text-[#e60000]">SIGNUP TODAY FOR SPECIAL OFFER!</h2>
+              <form class="px-8">
+                <div class="flex flex-wrap -mx-3 mb-6">
+                   <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                         <label class="block uppercase tracking-wide text-[#800000] text-xs font-bold mb-2" for="grid-first-name">
+                         First Name
+                         </label>
+                          <input class="appearance-none block w-full text-[#800000] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane">
+                    </div>
+                    <div class="w-full md:w-1/2 px-3">
+                             <label class="block uppercase tracking-wide text-[#800000] text-xs font-bold mb-2" for="grid-last-name">
+                              Last Name
+                            </label>
+                            <input class="appearance-none block w-full text-[#800000]  py-3 px-4 leading-tight focus:outline-none focus:bg-none focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe">
+                    </div>
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                             <label class="block uppercase tracking-wide text-[#800000] text-xs font-bold mb-2" for="grid-password">
+                                E-mail
+                            </label>
+                            <input class="appearance-none block w-full text-[#800000] border py-3 px-4 mb-3 leading-tight focus:outline-none " id="email" type="email" placeholder="example@gmail.com">
+                        </div>
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full px-3">
+                         <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-password">
+                             Message
+                         </label>
+                        <textarea class=" no-resize appearance-none block w-full  text-[#800000] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white h-24 resize-none" id="message" placeholder="MESSAGE">
+                        </textarea>
+                    </div>
+                </div>
+                    <p class="place-content-center mx-auto pb-4">
+                        <button class="rounded-none bg-white px-4 py-2 text-black">SUBMIT FORM</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section> 
+
+
+<section>
+    <!-- follow us section with fa-icon -->
+    <div class="text-center lg:py-[100px] md:py-[100px] py-[100px] bg-[#e60000] lg:h-[300px] h-[700px] mt-64 lg:mt-0 md:mt-0">
+        <p class="font-medium text-2xl lg:py-4 md:py-6 py-2 text-white ">Follow Us</p>
+
+
+        <ul class="grid  grid-cols-5 my-10 lg:w-96 md:w-96 :w-80 lg:mx-auto md:mx-auto mx-8">
+            <li class=""><i
+                    class="fa-brands fa-facebook-f w-12 hover:bg-black text-2xl p-2 bg-white hover:text-white text-[#800000]"></i>
+            </li>
+            <li class=""><i
+                    class="fa-brands fa-twitter w-12 hover:bg-black text-2xl p-2 bg-white hover:text-white text-[#800000]"></i>
+            </li>
+            <li class=""><i
+                    class="fa-brands fa-instagram w-12 hover:bg-black text-2xl p-2 bg-white hover:text-white text-[#800000]"></i>
+            </li>
+            <li class=""><i
+                    class="fa-brands fa-youtube w-12 hover:bg-black text-2xl p-2 bg-white hover:text-white text-[#800000]"></i>
+            </li>
+            <li class=""><i
+                    class="fa-brands fa-linkedin w-12 hover:bg-black text-2xl p-2 bg-white hover:text-white text-[#800000]"></i>
+            </li>
+        </ul>
+
+
+    </div>
+</section>
+<footer class="bg-[#e6dfdf] text-[#e60000]  border-black  ">
+    <div class="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-0 py-2 md:py-16 ">
+        <div class="p-10 md:p-10 md:px-10  grid place-items-center md:place-items-start  mt-10 md:mt-0 lg:mt-0">
+            <img src="images/mainlogo.png" alt=""
+                class="w-72 sm:w-72  md:w-36 lg:w-36 -mt-10">
+            <h1 class="my-0 text-center md:text-left">Lorem ipsum dolor sit amet, consec tetur
+                adipiscing
+                elit.</h1>
+            <span class="flex justify-start gap-5 mt-4 md:mt-0 lg:mt-0 md:gap-2 lg:gap-5 py-2 text-[#e60000]">
+                <i
+                    class="fa-brands fa-facebook-f  w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                <i
+                    class="fa-brands fa-twitter w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                <i
+                    class="fa-brands fa-youtube w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                <i
+                    class="fa-brands fa-facebook-messenger  w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200 "></i>
+            </span>
+        </div>
+        <div class=" p-5  md:p-5  border-black text-center  md:text-left mx-0 md:mx-auto ">
+            <h1 class="text-xl  md:text-2xl lg:text-2xl font-bold text-[#e60000]">Contacts</h1>
+            <p class="my-0 mt-4">+1 (234) 567 890</p>
+            <p class="my-0 mt-1">example@mail.com</p>
+            <h1 class="text-xl md:text-2xl lg:text-2xl font-bold my-2 mt-4 text-[#e60000]">Address</h1>
+            <p class="my-0 mt-4">323 Valley Lane, Austin</p>
+            <p class="my-0 mt-1">07.00 AM - 19.00 PM</p>
+        </div>
+        <div class="p-5  md:p-5 text-center md:text-left mx-0 md:mx-auto">
+            <h1 class="text-xl md:text-2xl lg:text-2xl font-bold text-[#e60000]">Explore</h1>
+            <ul class="text-md">
+                <li class="my-0 mt-4"><a href="./index.html">HOME</a></li>
+                <li class="my-0 md:my-2"><a href="./about.html">ABOUT</a></li>
+                <li class="my-0 md:my-2"><a href="./programe.html">PROGRAM</a></li>
+                <li class="my-0 md:my-2"><a href="./faq.html">FAQs</a></li>
+                <li class="my-0 md:my-2"><a href="./blog.html">BLOG</a></li>
+                <li class="my-0 md:my-2"><a href="./contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        <div
+            class="p-0  md:p-5 md:w-[300%] lg:w-[100%] py-5  text-center md:text-center lg:text-left  md:mx-auto">
+            <h1 class="text-xl md:text-2xl lg:text-2xl font-bold text-[#e60000]">Lets Talk</h1>
+            <p class="my-0 mt-4">Phasellus eros neque, porta vitae vehicula non.</p>
+            <span>
+                <button
+                    class=" mt-6  w-36 h-10 bg-[#e60000] text-white 
+                    hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500 ">Live
+                    Chat</button></span>
+        </div>
+    </div>
+    <div class="mb-12 text-center ">
+        <h1 class="text-2xl font-medium text-[#e60000]">NEWSLETTER</h1>
+        <span class="">
+            <input type="text"
+                class="w-52 md:w-96 h-10 bg-transparent border border-[#e60000] my-10 outline-none">
+            <button
+                class="w-36 font-medium h-10 bg-[#e60000] text-white 
+             hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500  ">Subscribe</button>
+        </span>
+    </div>
+    <hr class="w-[100%]  border-[1.3px] border-[#e60000] ">
+    <div class="grid grid-cols-1 md:grid-cols-2 w-full text-[#e60000] flex-col-reverse md:flex-col-row p-3">
+        <h1 class=" md:ml-5 lg:ml-5 text-xs md:text-sm text-center md:text-left  py-1 md:py-2">Copyright © 2022
+            ASK
+            Project
+        </h1>
+        <div class="flex justify-around md:justify-end px-10 py-1  md:py-2 ">
+            <h1 class="px-5 hover:text-[#800000] text-xs md:text-sm    ">Privacy Policy</h1>
+            <h1 class="hover:text-[#800000] text-xs md:text-sm  ">Terms & conditions</h1>
+        </div>
+
+    </div>
+
+
+</footer>
+<!-- Footer Section End-->
+    <!-- follow us section with fa-icon enf here -->
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+      <script src="index.js"></script> 
+<script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+</body>
+</html>

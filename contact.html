@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  <link rel="icon" href="./images/logo.jpg" type="images/icon type">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <style>
+          *{
+          margin: 0px;
+          padding: 0px;
+          box-sizing:border-box ;  
+      }
+      #transparent{
+          -webkit-text-stroke: 2px white;
+      }
+      </style>
+      <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                  screen:{
+                      'xs':'350px',// => @media (min-width: 350px) { ... }
+                      'sm': '640px',// => @media (min-width: 640px) { ... }
+                      'md': '768px',// => @media (min-width: 768px) { ... }               
+                      'lg': '1024px',// => @media (min-width: 1024px) { ... }
+                      'xl': '1280px',// => @media (min-width: 1280px) { ... }
+                      '2xl': '1536px',// => @media (min-width: 1536px) { ... }
+                  },
+                  colors: {
+                }
+              }
+            }
+          }
+      </script>
+</head>
+
+<body>
+      
+  <div class=" h-[200px] md:h-[200px]  relative bg-black/75  " >  
+        
+      <!----------------------------------Landing Page start---------------------->
+          <div class="hidden md:block py-1 px-5 grid grid-cols-3  h-10 bg-[#e60000] z-10 text-white">
+              <span class="grid grid-cols-2 ">
+                  <p>ranner@mail.com</p>
+                  <p>+1(234)567890</p>
+              </span>
+              <span class="-mt-3 md:py1 flex justify-end gap-6 pr-10  col-span-2">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fa-brands fa-facebook-messenger"></i>
+              </span>
+          </div>        
+          <div class="w-full grid grid-cols-2 md:grid-cols-3 z-20 absolute  ">
+            <div class="sticky  " id="logo">
+                <img src="images/mainlogo.png" alt="" width="150px" class=" absolute">
+            </div>
+            <ul class="hidden  -mx-24 md:mx-0 md:flex justify-between gap-5 mt-4 text-white font-bold  ">
+                <li><a href="">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li onmouseover="dropdown1()" onmouseout="dropdown1End()"><a href="">Programs
+                    <div class="bg-black/75 p-5 absolute" id="programMenu" style="display:none;">
+                        <ul class=" text-zinc-100 font-normal  ">
+                            <li><a href="./programe.html" class="hover:text-[#e60000]">Program</a></li>
+                            <li><a href="./program_detail.html" class="hover:text-[#e60000]">Program Details</a></li>
+                        </ul>
+                    </div>
+                </li>
+                </a>    
+                <li onmouseover="dropdown2()" onmouseout="dropdown2End()"><a href="">Pages</a>
+                    <div class="bg-black/75 p-5 absolute " id="pagesMenu" style="display:none;">
+                        <ul class=" text-zinc-100 font-normal  ">
+                            <li><a href="./events.html" class="hover:text-[#e60000]">Event</a></li>
+                            <li><a href="./faq.html" class="hover:text-[#e60000]">FAQs</a></li>
+                            <li><a href="./pricing.html" class="hover:text-[#e60000]">Pricing</a></li>
+                            <li><a href="./process.html" class="hover:text-[#e60000]">Process</a></li>
+                            <li><a href="./team.html" class="hover:text-[#e60000]">Team</a></li>
+                            <li><a href="./blog.html" class="hover:text-[#e60000]">Blog</a></li>
+                            <li><a href="./single_post.html" class="hover:text-[#e60000]">Single Page</a></li>
+                            <li><a href="" class="hover:text-[#e60000]">404 Page</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="./contact.html">Contacts</a></li>
+            </ul>
+            <div class="">
+                <button class="hidden md:block  bg-white text-[#e60000] w-24 h-8 mr-10 mt-2 float-right">Sign
+                    Up</button>
+                <button class="block md:hidden text-white text-2xl h-8 mr-10 mt-2 float-right" onclick="menuOpen()"
+                    id="bar"><i class="fa-solid fa-bars sticky "></i></button>
+            </div>
+        </div>
+  
+          <!-----------------------menu on click (responsive )------------------>
+          <div class="overflow-auto  w-full absolute  bg-black/75 h-full  md:hidden" id="nav" style="left:-100%;transition: .5s;">
+            <div class="pt-10 px-20 float-left  w-[80%]">
+                <img src="images/mainlogo.png" alt="" width="150px" class="">
+            </div>
+            <div class="float-left w-10 pt-10 text-2xl text-[#e60000] ">
+                <i class="fa-solid fa-xmark " onclick="menuClose()"></i>
+            </div>
+            <ul class="mx-24 mt-20">
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./index.html">Home</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./about.html">About</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Programs</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Pages</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Contacts</a></li>
+            </ul>
+        </div>
+      <!-----------------------menu on click end------------------>
+         
+      <section
+      class="dark:bg-black/75 bg-center md:bg-center bg-no-repeat md:bg-no-repeat w-full bg-[url('images/10046.jpg')]">
+      <div class="py-8 dark:bg-black/75    text-center">
+        <h1
+        class="mb-4 text-4xl font-bold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white mt-10 md:mt-16 text-center font-bold 
+        tracking-tight leading-none text-gray-900 md:text-5xl lg:text-5xl dark:text-white">
+        CONTACT US</h1>
+          <div class="w-full md:w-auto ">
+              <ul class="font-medium flex p-4 md:p-1 mt-4 justify-center gap-0 sm:gap-6 md:mb-10">
+                  <li>
+                      <a href="#"
+                          class="block py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 dark:text-white md:hover:dark:text-blue-500"
+                          aria-current="page">Home</a>
+                  </li>
+                  <li>
+                      <a href="#"
+                          class="block py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"><i
+                              class="fa-sharp fa-solid fa-square"></i></a>
+                  </li>
+                  <li>
+                      <a href="#"
+                          class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+   </section>
+      
+  </div>
+
+ 
+    <!-- headerr part end here -->
+    <!-- first section end -->
+    <section>
+        <div class="w-full lg:w-full  md:w-full  md:flex block bg-white lg:flex mt-16">
+            <!-- contact us detail area -->
+            <div class="lg:w-1/2 md:w-96 w-full  md:my-48  " id="img1">
+                <div class="xl:ml-48  md:ml-14 lg:ml-48 md:p-4 md:w-80 xl:w-[500px] lg:w-96 w-full p-7">
+                    <p class="text-[#e60000] font-bold  ">C O N T A C T <span class="ml-3">U S</span></p>
+                    <p class=" text-[#800000]  md:my-10 my-4 text-4xl font-bold ">GET IN TOUCH</p>
+                    <p class="text-[#e60000]    ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+                        luctus nec ullamcorper
+                        mattis.</p>
+                    <p class="mt-7"><i class="fa-sharp fa-solid fa-location-dot fa-beat" style="color: #800000;"></i>
+                        <b class="text-[#e60000] ml-4 ">186 GARNETT FIELD, MISSISSIPPI</b>
+                    </p>
+                    <p class="my-4"><i class="fa-sharp fa-solid fa-phone fa-beat" style="color: #800000;"></i>
+                        <b class="text-[#e60000] ml-4 ">8945616597</b>
+                    </p>
+                    <p class="my-4"><i class="fa-solid fa-envelope fa-beat" style="color: #800000;"></i>
+                        <b class="text-[#e60000] ml-4 ">intership@gmail.com</b>
+                    </p>
+                </div>
+
+            </div>
+            <!-- contact us detail area end -->
+            <!-- form area start -->
+            <div class="lg:w-1/2 md:w-96 w-full flex md:block lg:block mt-10 " id="img1">
+                <div class="bg-[#e6dfdf] my-24 md:ml-0 xl:ml-0 w-full md:w-96 xl:w-[560px] lg:w-[400px] xl:ml-0 lg:ml-0 p-7 ">
+                    <div class="md:ml-4 ml-10  ">
+                        <label for="large-input"
+                            class="block  text-sm font-medium  text-[#e60000]">NAME<span
+                                class="text-red-800">:</span></label>
+                        <input type="text" placeholder="First Name"
+                            class=" mt-2 md:w-52 w-64 lg:h-14 md:h-12 h-14  border-2  border-red-800 text-center  bg-transparent">
+                        <input type="text" placeholder="Last Name"
+                            class=" mt-2 xl:ml-6    ml-0 w-64  md:w-52 lg:h-14 md:h-12 h-14  border-2 border-red-800  text-center bg-transparent">
+
+
+                        <br><br><br><label for="large-input"
+                            class="block  text-sm font-medium text-[#e60000] ">EMAIL<span
+                                class="text-red-800">:</span></label>
+                        <input type="text" placeholder="Email"
+                            class=" lg:my-4 md:my-0 my-4 xl:w-[450px] lg:w-80   w-64  h-14 border-red-800 text-gray-800 border-2 bg-transparent text-center">
+                        <br><br><br>
+
+                        <label for="message" class="block mb-2 text-sm font-medium  text-[#e60000]">YOUR
+                            MESSAGE<span class="text-red-800">:</span></label>
+                        <textarea id="message" rows="4"
+                            class="block p-2.5 w-full  text-sm text-gray-900 bg-transparent border border-red-800  focus:border-blue-500   dark:text-white dark:focus:border-blue-500"
+                            placeholder="Write your thoughts here..."></textarea>
+                            <button type="submit"
+                            class="w-32 font-medium hover:bg-white border-white hover:text-[#e60000] border-2 border-[#e60000] text-white mt-7 h-14 border-2  bg-[#e60000] ">submit</button>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- form area end -->
+
+        </div>
+    </section>
+    <!-- map section start here -->
+    <div class=" bg-[#e6dfdf] md:h-[300px] h-52 flex justify-center">
+
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.2847498897063!2d77.43031450962391!3d23.23272297893957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c435605f269e1%3A0xe67446598d15ad0e!2sCybrom%20Technology%20-%20Cyber%20Security%20%7C%20Ethical%20Hacking%20%7C%20Python%20%7C%20Java%20%7C%20Digital%20Marketing%20-%20Fullstack%20Training!5e0!3m2!1sen!2sin!4v1681379203753!5m2!1sen!2sin"
+            height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            class=" xl:w-[1110px] lg:w-[800px] md:w-[600px]         w-80  md:h-[500px] h-80" id="p1"></iframe>
+
+    </div>
+    <div class="bg-[#e60000] h-48  md:h-96 text-center ">
+
+    </div>
+    <!-- map section end here -->
+    <!-- follow us section with fa-icon -->
+    <div class="bg-[#e60000] h-40 md:h-64 text-center">
+        <p class="font-medium text-2xl text-center">Follow Us</p>
+
+
+        <ul class=" flex   my-10 md:mx-64 xl:mx-[550px] sm:ml-24 lg:mx-[400px]" id="p4">
+            <li class="ml-6"><i
+                    class="fa-brands fa-facebook-f w-12 hover:bg-white text-2xl p-2 bg-black hover:text-black text-white"></i>
+            </li>
+            <li class="ml-6"><i
+                    class="fa-brands fa-twitter w-12 hover:bg-white text-2xl p-2 bg-black hover:text-black text-white"></i>
+            </li>
+            <li class="ml-6"><i
+                    class="fa-brands fa-instagram w-12 hover:bg-white text-2xl p-2 bg-black hover:text-black text-white"></i>
+            </li>
+            <li class="ml-6"><i
+                    class="fa-brands fa-youtube w-12 hover:bg-white text-2xl p-2 bg-black hover:text-black text-white"></i>
+            </li>
+            <li class="ml-6"><i
+                    class="fa-brands fa-linkedin w-12 hover:bg-white text-2xl p-2 bg-black hover:text-black text-white"></i>
+            </li>
+        </ul>
+
+
+    </div>
+    <!-- follow us section with fa-icon enf here -->
+    <footer class="bg-[#e6dfdf] text-[#e60000]  border-black  ">
+        <div class="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-0 py-2 md:py-16 ">
+            <div class="p-10 md:p-10 md:px-10  grid place-items-center md:place-items-start  mt-10 md:mt-0 lg:mt-0">
+                <img src="images/mainlogo.png" alt=""
+                    class="w-72 sm:w-72  md:w-36 lg:w-36 -mt-10">
+                <h1 class="my-0 text-center md:text-left">Lorem ipsum dolor sit amet, consec tetur
+                    adipiscing
+                    elit.</h1>
+                <span class="flex justify-start gap-5 mt-4 md:mt-0 lg:mt-0 md:gap-2 lg:gap-5 py-2 text-[#e60000]">
+                    <i
+                        class="fa-brands fa-facebook-f  w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                    <i
+                        class="fa-brands fa-twitter w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                    <i
+                        class="fa-brands fa-youtube w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                    <i
+                        class="fa-brands fa-facebook-messenger  w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200 "></i>
+                </span>
+            </div>
+            <div class=" p-5  md:p-5  border-black text-center  md:text-left mx-0 md:mx-auto ">
+                <h1 class="text-xl  md:text-2xl lg:text-2xl font-bold text-[#e60000]">Contacts</h1>
+                <p class="my-0 mt-4">+1 (234) 567 890</p>
+                <p class="my-0 mt-1">example@mail.com</p>
+                <h1 class="text-xl md:text-2xl lg:text-2xl font-bold my-2 mt-4 text-[#e60000]">Address</h1>
+                <p class="my-0 mt-4">323 Valley Lane, Austin</p>
+                <p class="my-0 mt-1">07.00 AM - 19.00 PM</p>
+            </div>
+            <div class="p-5  md:p-5 text-center md:text-left mx-0 md:mx-auto">
+                <h1 class="text-xl md:text-2xl lg:text-2xl font-bold text-[#e60000]">Explore</h1>
+                <ul class="text-md">
+                    <li class="my-0 mt-4"><a href="./index.html">HOME</a></li>
+                    <li class="my-0 md:my-2"><a href="./about.html">ABOUT</a></li>
+                    <li class="my-0 md:my-2"><a href="./programe.html">PROGRAM</a></li>
+                    <li class="my-0 md:my-2"><a href="./faq.html">FAQs</a></li>
+                    <li class="my-0 md:my-2"><a href="./blog.html">BLOG</a></li>
+                    <li class="my-0 md:my-2"><a href="./contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <div
+                class="p-0  md:p-5 md:w-[300%] lg:w-[100%] py-5  text-center md:text-center lg:text-left  md:mx-auto">
+                <h1 class="text-xl md:text-2xl lg:text-2xl font-bold text-[#e60000]">Lets Talk</h1>
+                <p class="my-0 mt-4">Phasellus eros neque, porta vitae vehicula non.</p>
+                <span>
+                    <button
+                        class=" mt-6  w-36 h-10 bg-[#e60000] text-white 
+                        hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500 ">Live
+                        Chat</button></span>
+            </div>
+        </div>
+        <div class="mb-12 text-center ">
+            <h1 class="text-2xl font-medium text-[#e60000]">NEWSLETTER</h1>
+            <span class="">
+                <input type="text"
+                    class="w-52 md:w-96 h-10 bg-transparent border border-[#e60000] my-10 outline-none">
+                <button
+                    class="w-36 font-medium h-10 bg-[#e60000] text-white 
+                 hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500  ">Subscribe</button>
+            </span>
+        </div>
+        <hr class="w-[100%]  border-[1.3px] border-[#e60000] ">
+        <div class="grid grid-cols-1 md:grid-cols-2 w-full text-[#e60000] flex-col-reverse md:flex-col-row p-3">
+            <h1 class=" md:ml-5 lg:ml-5 text-xs md:text-sm text-center md:text-left  py-1 md:py-2">Copyright © 2022
+                ASK
+                Project
+            </h1>
+            <div class="flex justify-around md:justify-end px-10 py-1  md:py-2 ">
+                <h1 class="px-5 hover:text-[#800000] text-xs md:text-sm    ">Privacy Policy</h1>
+                <h1 class="hover:text-[#800000] text-xs md:text-sm  ">Terms & conditions</h1>
+            </div>
+
+        </div>
+
+
+    </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="program_detail.js"></script>
+  
+</body>
+
+</html>

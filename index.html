@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Ranner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link rel="icon" href="./images/logo.jpg" type="image/icon type">
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    #transparent {
+        -webkit-text-stroke: 2px white;
+    }
+</style>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                screen: {
+                    'xs': '350px',// => @media (min-width: 350px) { ... }
+                    'sm': '640px',// => @media (min-width: 640px) { ... }
+                    'md': '768px',// => @media (min-width: 768px) { ... }               
+                    'lg': '1024px',// => @media (min-width: 1024px) { ... }
+                    'xl': '1280px',// => @media (min-width: 1280px) { ... }
+                    '2xl': '1536px',// => @media (min-width: 1536px) { ... }
+                },
+                colors: {
+                }
+            }
+        }
+    }
+</script>
+
+<body>
+
+
+    <div class=" h-[1000px] md:h-[600px]  relative ">
+
+        <!----------------------------------Landing Page start---------------------->
+        <div class="hidden sm:block py-1 px-5 grid grid-cols-3  h-10 bg-[#e60000] text-white z-10 ">
+            <span class="grid grid-cols-2 mt-1 ">
+                <p>ranner@mail.com</p>
+                <p>+1(234)567890</p>
+            </span>
+            <span class="-mt-5 md:py1 flex justify-end gap-6 pr-10  col-span-2 ">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-facebook-messenger"></i>
+            </span>
+        </div>
+        <div class="w-full grid grid-cols-2 md:grid-cols-3 z-20 absolute  ">
+            <div class="sticky" id="logo">
+                <img src="./images/10001.png" alt="" width="150px"  class="absolute">
+            </div>
+            <ul class="hidden  -mx-24 md:mx-0 md:flex justify-between gap-5 mt-4 text-white font-bold  ">
+                <li><a href="">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li onmouseover="dropdown1()" onmouseout="dropdown1End()"><a href="">Programs
+                    <div class="bg-black/75 p-5 absolute" id="programMenu" style="display:none;">
+                        <ul class=" text-zinc-100 font-normal  ">
+                            <li><a href="./programe.html" class="hover:text-[#e60000]">Program</a></li>
+                            <li><a href="./program_detail.html" class="hover:text-[#e60000]">Program Details</a></li>
+                        </ul>
+                    </div>
+                </li>
+                </a>
+                    
+                <li onmouseover="dropdown2()" onmouseout="dropdown2End()"><a href="">Pages</a>
+                    <div class="bg-black/75 p-5 absolute " id="pagesMenu" style="display:none;">
+                        <ul class=" text-zinc-100 font-normal  ">
+                            <li><a href="./events.html" class="hover:text-[#e60000]">Event</a></li>
+                            <li><a href="./faq.html" class="hover:text-[#e60000]">FAQs</a></li>
+                            <li><a href="./pricing.html" class="hover:text-[#e60000]">Pricing</a></li>
+                            <li><a href="./process.html" class="hover:text-[#e60000]">Process</a></li>
+                            <li><a href="./team.html" class="hover:text-[#e60000]">Team</a></li>
+                            <li><a href="./blog.html" class="hover:text-[#e60000]">Blog</a></li>
+                            <li><a href="./single_post.html" class="hover:text-[#e60000]">Single Page</a></li>
+                            <li><a href="" class="hover:text-[#e60000]">404 Page</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="./contact.html">Contacts</a></li>
+            </ul>
+            <div class="">
+                <button class="hidden md:block  bg-white text-[#e60000] w-24 h-8 mr-10 mt-2 float-right">Sign
+                    Up</button>
+                <button class="block md:hidden text-white text-2xl h-8 mr-10 mt-2 float-right" onclick="menuOpen()"
+                    id="bar"><i class="fa-solid fa-bars sticky "></i></button>
+            </div>
+        </div>
+        <div class="top-[20%]  pl-3 md:pl-10 absolute " id="landingText">
+            <p class="text-[#e60000] text-2xl font-medium my-8">RUNNING CLUB</p>
+            <h1 class=" text-4xl md:text-6xl text-[#800000] font-bold tracking-[]  ">WHAT WE DO IN LIFE ECHOES IN
+                ETERNITY
+            </h1>
+            <p class="w-72 text-[#e60000] my-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+                luctus nec ullamcorper mattis.</p>
+            <button class=" w-32 h-10 bg-[#e60000] text-white 
+                hover:bg-transparent hover:text-[#e60000] border-2 border-[#e60000]">Get
+                Started</button>
+            <button
+                class="text-white border-2 border-white w-32 h-10 hover:bg-[#e60000] hover:border-0 hover:text-white">Learn
+                More</button>
+        </div>
+        <!-----------------------menu on click (responsive )------------------>
+        <div class="overflow-hidden w-full absolute  bg-black/75 h-full   md:hidden" id="nav" style="left:-100%;transition: .5s;">
+            <div class="pt-10 px-20 float-left  w-[80%]">
+                <img src="images/mainlogo.png" alt="" width="150px" class="">
+            </div>
+            <div class="float-left w-10 pt-10 text-2xl text-[#e60000] ">
+                <i class="fa-solid fa-xmark " onclick="menuClose()"></i>
+            </div>
+            <ul class="mx-24 mt-20">
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./index.html">Home</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./about.html">About</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Programs</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Pages</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Contacts</a></li>
+            </ul>
+        </div>
+        <!-----------------------menu on click end------------------>
+
+        <div class="h-full bg-cover bg-fixed " style="background-image: url(images/10037.jpg);"></div>
+
+
+    </div>
+    <!----------------------------------Section two (counters)---------------------->
+    <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-10 py-20 px-10 bg-white text-white text-center counter ">
+        <div class="border-0 border-white px-10 py-12">
+            <h1 class="text-6xl font-bold text-[#e60000]" id="c1"></h1>
+            <p class="tracking-[5px] mt-2 text-[#e60000]">RUNNING AWARDS</p>
+            <p class="my-5 text-[#800000]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus.</p>
+            <a href=""
+                class=" text-[#e60000] underline decoration-2 underline-offset-8 decoration-[#800000] transition ease-in-out delay-120 hover:decoration-black transition">Our
+                Awards</a>
+        </div>
+        <div class="border-0 border-white px-10 py-12">
+            <h1 class="text-6xl font-bold text-[#e60000]" id="c2"></h1>
+            <p class="tracking-[5px] mt-2 text-[#e60000]">ACTIVE MEMBERS</p>
+            <p class="my-5 text-[#800000]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus.</p>
+            <a href=""
+                class="text-[#e60000] underline decoration-2 underline-offset-8 decoration-[#800000] transition ease-in-out delay-120 hover:decoration-black transition">See
+                Reviews</a>
+        </div>
+        <div class="border-0 border-white px-10 py-12">
+            <h1 class="text-6xl font-bold text-[#e60000]" id="c3"></h1>
+            <p class="tracking-[5px] mt-2 text-[#e60000]">WEEKLY MILEAGE</p>
+            <p class="my-5 text-[#800000]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus.</p>
+            <a href=""
+                class="text-[#e60000] underline decoration-2 underline-offset-8 decoration-[#800000] transition ease-in-out delay-120 hover:decoration-black transition">Explore
+                Now</a>
+        </div>
+    </div>
+    <!---------------------section 3 (about Runner)--------------------------->
+    <div class="bg-[#e6dfdf] py-16 px-5 md:px-10 h-[1100px] sm:h-[1200px] md:h-[1000px] ">
+        <div class=" " id="aboutText">
+            <p class="text-xl font-medium tracking-[6px] text-[#e60000]">ABOUT RANNER</p>
+            <h1 class="text-2xl md:text-5xl pr-0 md:pr-5 my-5 font-bold text-[#800000] tracking-[5px]  md:w-[60%]">
+                PLAYING
+                SPORTS LIKE THERE IS NO TOMORROW</h1>
+            <p class="text-md md:text-xl   md:w-[60%] md:pr-28 my-5 font-medium text-[#800000]">YOU CAN RUN FAST, JUMP
+                HIGH OR LIFT HEAVY WEIGHTS BUT IF YOUR BAD HABITS ARE HOLDING YOU BACK THEN ALL OF THIS WILL BE
+                POINTLESS!</p>
+            <button
+                class="w-28 h-10 my-10 font-medium bg-[#e60000] text-white 
+                hover:bg-transparent hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out delay-150">Read
+                More</button>
+        </div>
+        <div class="w-[100%] md:w-[50%] sm:h-[400px] md:h-[380px] lg:h-[420px] border-0 border-white relative float-left"
+            id="aboutTextImg1">
+            <p class=" absolute top-20 md:top-32 text-3xl sm:text-5xl md:text-6xl px-12 text-center font-bold text-transparent "
+                id="transparent">&nbsp; LEVEL UP YOUR GAME</p>
+            <img src="images/10041.jpg" alt="" class="w-[100%] h-[100%]">
+        </div>
+        <div class="text-white w-[100%] h-[300px] md:w-[50%] md:h-[300px] lg:h-[300px] bg-[#e60000] float-left md:float-right md:translate-y-12 md:-translate-x-12 md:px-5"
+            id="aboutTextImg2">
+            <div class=" sm:grid grid-cols-2 h-[50%]  ">
+                <p class=" font-bold text-2xl ">OUR VISION</p>
+                <p class="mt-0 sm:mt-0">Integer id suscipit felis, vel efficitur leo. Phasellus ultrices, quam eu
+                    feugiat ultrices, mi lacus facilisis nulla laoreet.</p>
+            </div>
+            <hr class="border-1 border-white  ">
+            <div class="  sm:grid grid-cols-2 h-[50%] ">
+                <p class=" font-bold text-2xl">OUR MISSION</p>
+                <p class="mt-0 sm:mt-0">Nullam nec dignissim risus. Duis at lorem in sem luctus faucibus. Mauris finibus
+                    vestibulum felis, non aliquam neque.</p>
+            </div>
+        </div>
+    </div>
+    <!-----------section 4 (parallex)------------------------------------>
+    <div class="overflow-hidden text-white relative h-[1000px] sm:h-[800px] md:h-[550px] " id="parallex1">
+        <div class="grid  w-full grid-cols-1 sm:grid-cols-2 py-10 md:grid-cols-3 mx-auto md:mx-0 gap-5 md:gap-10  absolute ">
+            <div
+                class="grid  mx-auto grid-cols-1 place-items-center md:place-items-start  md:grid-cols-3 py-0 md:py-10  ">
+                <div class="">
+                    <img src="images/10002.png" alt="" class="w-10 md:w-16 mx-5">
+                </div>
+                <div class="text-center md:text-left md:col-span-2 px-0 md:px-10  ">
+                    <h1 class="text-xl font-bold">CROSSFIT</h1>
+                    <h1 class="text-zinc-500 pt-2 ">Lorem ipsum dolor sit amet, consectetur adipiscing.</h1>
+                </div>
+            </div>
+
+            <div class=" grid grid-cols-1 place-items-center md:place-items-start  md:grid-cols-3 py-0 md:py-10 ">
+                <div class="">
+                    <img src="images/10006.png" alt="" class="w-10 md:w-16 mx-5">
+                </div>
+                <div class="text-center md:text-left md:col-span-2 px-0 md:px-10">
+                    <h1 class="text-xl font-bold">STRATEGY</h1>
+                    <h1 class="text-zinc-500 pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing.</h1>
+                </div>
+            </div>
+            <div
+                class="grid grid-cols-1 place-items-center md:place-items-start  md:grid-cols-3 py-0 md:py-10 border-0 border-red-900">
+                <div class="">
+                    <img src="images/10010.png" alt="" class="w-10 md:w-16 mx-5">
+                </div>
+                <div class="text-center md:text-left md:col-span-2 px-0 md:px-10">
+                    <h1 class="text-xl font-bold">COACHING</h1>
+                    <h1 class="text-zinc-500 pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing.</h1>
+                </div>
+            </div>
+            <div
+                class="grid grid-cols-1 place-items-center md:place-items-start  md:grid-cols-3 py-0 md:py-10 border-0 border-red-900">
+                <div class="">
+                    <img src="images/10004.png" alt="" class="w-10 md:w-16 mx-5">
+                </div>
+                <div class="text-center md:text-left md:col-span-2 px-0 md:px-10">
+                    <h1 class="text-xl font-bold">HEALTHY</h1>
+                    <h1 class="text-zinc-500 pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing.</h1>
+                </div>
+            </div>
+            <div
+                class="grid grid-cols-1 place-items-center md:place-items-start  md:grid-cols-3 py-0 md:py-10 border-0 border-red-900">
+                <div class="">
+                    <img src="images/10008.png" alt="" class="w-10 md:w-16 mx-5">
+                </div>
+                <div class="text-center md:text-left md:col-span-2 px-0 md:px-10">
+                    <h1 class="text-xl font-bold">WORKOUT</h1>
+                    <h1 class="text-zinc-500 pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing.</h1>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 place-items-center md:place-items-start  md:grid-cols-3 py-0 md:py-10 ">
+                <div class="">
+                    <img src="images/10012.png" alt="" class="w-10 md:w-16 mx-5">
+                </div>
+                <div class="text-center md:text-left md:col-span-2 px-0 md:px-10">
+                    <h1 class="text-xl font-bold">FITNESS</h1>
+                    <h1 class="text-zinc-500 pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing.</h1>
+                </div>
+            </div>
+
+        </div>
+        <div class="h-full bg-fixed bg-cover bg-black " style="background-image:url(images/img2.jpg);">
+        </div>
+
+    </div>
+    <!-----------section 5 (best sports)-------------------------------->
+    <div class="bg-[#e6dfdf] px-8  md:px-10 py-1">
+        <div class="col-span-3 text-center text-white my-10 " id="programPart1">
+            <p class="text-[#e60000] text-md sm:text-xl md:text-2xl tracking-[4px] font-medium ">OUR PROGRAMS</p>
+            <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold tracking-[5px] text-[#800000] mt-5 ">THE BEST SPORTS
+                FOR
+                YOU</h1>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 bg-[#e6dfdf] px-0 md:px-10 py-0 md:py-10"
+            id="programPart2">
+            <div class="h-[250px] sm:h-[350px] md:h-[350px] relative ">
+                <div class="absolute px-8 top-10 sm:top-36 md:top-28">
+                    <h1 class="font-bold text-white text-xl sm:text-2xl mt-10">JOGGING PROGRAM</h1>
+                    <p class="text-md text-[#d9d9d9] py-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit elit
+                        tellus.</p>
+                    <button class=" w-20 sm:w-32  h-8 bg-[#e60000] text-white 
+                    hover:bg-transparent hover:text-white border-2 border-[#e60000] hover:border-white">Join
+                        Now!</button>
+                </div>
+                <div class="h-full bg-cover bg-img" style="background-image:url(images/10043.jpg)"></div>
+            </div>
+            <div class="h-[250px] sm:h-[350px] md:h-[350px] relative ">
+                <div class="absolute px-8 top-10 sm:top-36 md:top-28 ">
+                    <h1 class="font-bold text-white text-xl sm:text-2xl mt-10">MARATHON PROGRAM</h1>
+                    <p class="text-md text-[#d9d9d9] py-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit elit
+                        tellus.</p>
+                    <button class=" w-20 sm:w-32 h-8 bg-[#e60000] text-white 
+                    hover:bg-transparent hover:text-white border-2 border-[#e60000] hover:border-white">Join
+                        Now!</button>
+                </div>
+                <div class="h-full bg-cover bg-img" style="background-image:url(images/10014.jpg)"></div>
+            </div>
+            <div class="h-[250px] sm:h-[350px] md:h-[350px] relative ">
+                <div class="absolute px-8 top-10 sm:top-36 md:top-28">
+                    <h1 class="font-bold text-white text-xl sm:text-2xl mt-10">TRIATHLON PROGRAM</h1>
+                    <p class="text-md text-[#d9d9d9] py-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit elit
+                        tellus.</p>
+                    <button class=" w-20 sm:w-32 h-8 bg-[#e60000] text-white 
+                    hover:bg-transparent hover:text-white border-2 border-[#e60000] hover:border-white">Join
+                        Now!</button>
+                </div>
+                <div class="h-full bg-cover bg-img" style="background-image:url(images/10046.jpg)"></div>
+            </div>
+        </div>
+    </div>
+    <!------------------section 6 (event page)----------------------------------->
+    <div class="bg-white py-0 md:py-10">
+        <div class="px-10 grid grid-cols-1 sm:grid-cols-2 place-items-center md:place-items-start pt-0" id="eventP1">
+            <div class=" md:col-span-2 py-5">
+                <h1 class="text-[#e60000] text-2xl tracking-[4px]">Our event</h1>
+            </div>
+            <div class="text-center md:text-left ">
+                <h1 class="text-2xl md:text-4xl text-[#800000] tracking-[5px] font-bold ">JOIN OUR SPORTS EVENTS</h1>
+            </div>
+            <div class="w-full grid place-content-center md:place-content-end">
+                <button class=" w-32 h-8 text-md bg-[#e60000] text-white 
+                hover:bg-white hover:text-[#e60000] border-2 border-[#e60000]  ">All Events</button>
+            </div>
+        </div>
+
+        <!--------------------event ticket section---------------------->
+        <div class=" px-5 py-5 md:px-10 md:py-10">
+            <div class=" bg-black text-white text-center grid grid-cols-1 md:grid-cols-5 eve-tick ">
+                <div class=" h-[300px] bg-cover" style="background-image: url(images/10013.jpg);">
+                </div>
+
+                <div class="text-center px-0 md:px-10 grid items-center py-5 md:py-10  md:col-span-2 bg-[#e6dfdf] ">
+                    <p class="text-[#e60000]">NEW YORK <span class="text-[#800000]">----</span> CITY HALL</p>
+                    <h1 class="text-xl  md:text-2xl font-bold text-[#800000] ">SUNDAY MORNING JOGGING</h1>
+                    <div class="grid grid-cols-2 sm:grid-cols-3  md:flex justify-between ">
+                        <p class="text-black"><i class="fa-solid fa-users text-xl text-[#e60000]"></i>GENERAL</p>
+                        <p class="text-black"><i class="fa-solid fa-clock text-xl text-[#e60000]"></i>6AM - 11AM</p>
+                        <p class="text-black"><i class="fa-solid fa-ticket text-xl text-[#e60000]"></i>$55/PERSON</p>
+                    </div>
+                </div>
+                <div class="grid py-5 md:py-10 items-center border-0 border-white px-0 bg-[#e6dfdf]">
+                    <div class="grid items-center w-full h-full border-[1px] border-[#800000] border-dashed px-5"
+                        style="border-top: 0px; border-bottom: 0px;">
+                        <h1 class="text-5xl md:text-3xl font-bold text-[#e60000] ">NOV 20</h1>
+                    </div>
+                </div>
+                <div class="grid items-center justify-center  md:my-0 md:px-5 bg-[#e6dfdf]">
+                    <button
+                        class="w-28 md:w-24 lg:w-28 h-10 bg-[#e60000] text-white 
+                    hover:bg-transparent hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500  ">Buy
+                        Ticket</button>
+                </div>
+
+            </div>
+
+            <div class=" bg-[#e6dfdf] text-white text-center grid grid-cols-1 md:grid-cols-5 my-5 eve-tick">
+                <div class=" h-[300px] bg-cover" style="background-image: url(images/10073.jpg);">
+                </div>
+
+                <div class="text-center px-0 md:px-10 grid items-center py-5 md:py-10  md:col-span-2">
+                    <p class="text-[#e60000]">NEW YOR <span class="text-[#800000]">----</span> CITY HALL</p>
+                    <h1 class="text-xl  md:text-2xl font-bold text-[#800000]">HILL CLIMB MARATHON</h1>
+                    <div class="grid grid-cols-2 sm:grid-cols-3  md:flex justify-between ">
+                        <p class="text-black"><i class="fa-solid fa-users text-xl text-[#e60000]"></i> GENERAL</p>
+                        <p class="text-black"><i class="fa-solid fa-clock text-xl text-[#e60000]"></i> 6AM - 11AM</p>
+                        <p class="text-black"><i class="fa-solid fa-ticket text-xl text-[#e60000]"></i>$55/PERSON</p>
+                    </div>
+                </div>
+                <div class="grid py-5 md:py-10 items-center border-0 border-[#800000] px-0 ">
+                    <div class="grid items-center w-full h-full border-[1px] border-[#800000] border-dashed px-5"
+                        style="border-top: 0px; border-bottom: 0px;">
+                        <h1 class="text-5xl md:text-3xl font-bold text-[#e60000] ">NOV 20</h1>
+                    </div>
+                </div>
+                <div class="grid items-center justify-center my-5 md:my-0 md:px-5 ">
+                    <button
+                        class="w-28 md:w-24 lg:w-28 h-10 bg-[#e60000] text-white 
+                    hover:bg-transparent hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500  ">Buy
+                        Ticket</button>
+                </div>
+
+            </div>
+            <div class=" bg-[#e6dfdf] text-white text-center grid grid-cols-1 md:grid-cols-5 eve-tick">
+                <div class=" h-[300px] bg-cover" style="background-image: url(images/10014.jpg);">
+                </div>
+
+                <div class="text-center px-0 md:px-10 grid items-center py-5 md:py-10  md:col-span-2">
+                    <p class="text-[#e60000]">NEW YOR <span class="text-[#800000]">----</span> CITY HALL</p>
+                    <h1 class="text-xl  md:text-2xl font-bold text-[#800000]">HILL CLIMB MARATHON</h1>
+                    <div class="grid grid-cols-2 sm:grid-cols-3  md:flex justify-between ">
+                        <p class="text-black"><i class="fa-solid fa-users text-xl text-[#e60000]"></i> GENERAL</p>
+                        <p class="text-black"><i class="fa-solid fa-clock text-xl text-[#e60000]"></i> 6AM - 11AM</p>
+                        <p class="text-black"><i class="fa-solid fa-ticket text-xl text-[#e60000]"></i>$55/PERSON</p>
+                    </div>
+                </div>
+                <div class="grid py-5 md:py-10 items-center border-0 border-[#800000] px-0 ">
+                    <div class="grid items-center w-full h-full border-[1px] border-[#800000] border-dashed px-5"
+                        style="border-top: 0px; border-bottom: 0px;">
+                        <h1 class="text-5xl md:text-3xl font-bold text-[#e60000] ">NOV 20</h1>
+                    </div>
+                </div>
+                <div class="grid items-center justify-center my-5 md:my-0 md:px-5 ">
+                    <button
+                        class="w-28 md:w-24 lg:w-28 h-10 bg-[#e60000] text-white 
+                    hover:bg-transparent hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500  ">Buy
+                        Ticket</button>
+                </div>
+
+            </div>
+        </div>
+    </div><!--check this one-->
+    </div>
+    <!--------------------------section 7--------------------------------->
+    <div class="bg-[#e6dfdf] " id="sponsor">
+        <div class="pt-5 text-center px-10">
+            <p class="text-2xl text-[#e60000]">OUR SPONSORS</p>
+            <h1 class="text-3xl md:text-5xl text-[#800000] my-5">SPORTSMAN IS WHAT WE DO</h1>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 px-20  sm:px-16 md:px-16 gap-5 brightness-50 ">
+            <img src="images/10016.png" alt=""
+                class=" p-5 sm:p-8 md:p-10 brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10017.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10018.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10020.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10022.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10024.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10026.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10027.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+        </div>
+    </div>
+
+
+    <!--------------------------carousal section------------------->
+    <section class=" bg-white py-10  ">
+        <!-- component -->
+        <!-- This is an example component -->
+        <div class="max-w-6xl mx-auto bg-[#e60000]  ">
+
+            <div id="default-carousel " class="relative text-[#e6dfdf]" data-carousel="static">
+                <!-- Carousel wrapper -->
+                <div class="overflow-hidden relative mx-0 md:mx-12  h-80 md:h-96  xl:h-96 ">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out bg-[#e60000] text-white" data-carousel-item>
+                        <div>
+                            <div class="">
+                                <div class="w-24 mx-auto py-4  flex justify-center">
+                                    <img src="images/10028.jpg" class="rounded-full w-16 h-16 md:w-20 md:h-20 ">
+                                </div>
+                                <p class="text-xl md:text-2xl text-center">NAME</p>
+                                <p class="text-center">Runner</p>
+                            </div>
+                            <div class="max-w-[800px] mx-auto my-4">
+                                <p class="text-center text-md md:text-2xl">Basic contact form for simple website.
+                                    Responsive
+                                    and only on tailwind foundation. Change button background to primary !
+                                    Basic contact form for simple website. Responsive and only on tailwind
+                                    foundation. Change button background to primary !</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out bg-[#E8FF02]" data-carousel-item>
+                        <div>
+                            <div class="">
+                                <div class="w-24 mx-auto py-4">
+                                    <img src="images/10029.jpg" class="rounded-full w-24 h-24 ">
+                                </div>
+                                <p class="text-2xl text-center">NAME</p>
+                                <p class="text-center">Runner</p>
+                            </div>
+                            <div class="max-w-[800px] mx-auto my-4">
+                                <p class="text-center text-2xl">Basic contact form for simple website. Responsive
+                                    and only on tailwind foundation. Change button background to primary !
+                                    Basic contact form for simple website. Responsive and only on tailwind
+                                    foundation. Change button background to primary !</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out bg-white" data-carousel-item>
+                        <div>
+                            <div class="">
+                                <div class="w-24 mx-auto py-4">
+                                    <img src="images/10030.jpg" class="rounded-full w-24 h-24 ">
+                                </div>
+                                <p class="text-2xl text-center">NAME</p>
+                                <p class="text-center">Runner</p>
+                            </div>
+                            <div class="max-w-[800px] mx-auto my-4">
+                                <p class="text-center text-2xl">Basic contact form for simple website. Responsive
+                                    and only on tailwind foundation. Change button background to primary !
+                                    Basic contact form for simple website. Responsive and only on tailwind
+                                    foundation. Change button background to primary !</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Slider indicators -->
+                <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1"
+                        data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                        data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                        data-carousel-slide-to="2"></button>
+                </div>
+                <!-- Slider controls -->
+                <button type="button"
+                    class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                        <span class="hidden">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                        <span class="hidden">Next</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-------------------------section 8 (trainers)---------------->
+    <div class="bg-[#e6dfdf] py-20">
+        <div class=" w-full   text-center justify-center sm:h-44 " id="trainerText">
+            <p class="text-[#e60000] text-1xl tracking-[5px]  ">OUR TEAM</p>
+            <h1
+                class="text-4xl lg:text-5xl leading-[50px] sm:leading-none md:leading-none font-bold text-[#800000] my-8 xs:leading-[100px] ">
+                MEET
+                OUR TRAINERS</h1>
+        </div>
+
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-5 " id="trainerP2">
+            <div class=" border-0 border-white">
+                <div>
+                    <img src="images/10031.jpg" alt="">
+                </div>
+                <div class="text-center  font-medium tracking-[3px] md:py-3">
+                    <h1 class="text-2xl mt-4 text-[#800000]">JASON DORRES</h1>
+                    <h1 class="text-[#e60000] mt-1 ">TRAINER</h1>
+                </div>
+            </div>
+
+            <div class=" border-0 border-white">
+                <div>
+                    <img src="images/10032.jpg" alt="">
+                </div>
+                <div class="text-center text-white font-medium tracking-[3px] md:py-3">
+                    <h1 class="text-2xl mt-4 text-[#800000]">LINNA HOLTZ</h1>
+                    <h1 class="text-[#e60000] mt-1 ">TRAINER</h1>
+                </div>
+            </div>
+
+            <div class=" border-0 border-white">
+                <div>
+                    <img src="images/10033.jpg" alt="">
+                </div>
+                <div class="text-center text-white font-medium tracking-[3px] md:py-3">
+                    <h1 class="text-2xl mt-4 text-[#800000]">DINDA WALTSON</h1>
+                    <h1 class="text-[#e60000] mt-1">TRAINER</h1>
+                </div>
+            </div>
+
+            <div class=" border-0 border-white">
+                <div>
+                    <img src="images/10034.jpg" alt="">
+                </div>
+                <div class="text-center text-white font-medium tracking-[3px] md:py-3">
+                    <h1 class="text-2xl mt-4 text-[#800000]">SAMMY GOLDEN</h1>
+                    <h1 class="text-[#e60000] mt-1">TRAINER</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!------------------------section 9 ----------------------------->
+        <div class="relative" id="parallex2">
+            <div class=" bg-[#e60000]/[0.8] h-full w-full grid grid-cols-1 md:grid-cols-2  absolute content-center ">
+                <div class="">
+                    <h1 class="text-2xl md:text-4xl text-center text-white font-bold ">LET'S DO THE RUN TOGETHER!</h1>
+                </div>
+                <div class="  grid justify-center px-10 py-10 md:py-0">
+                    <button class="w-32 h-10 text-[#800000] bg-white ">SignUp Now</button>
+                </div>
+            </div>
+            <div class="bg-fixed h-56" style="background-image: url(images/10041.jpg);"></div>
+        </div>
+
+        <div class="bg-[#e6dfdf] py-2 md:py-8" id="blog">
+            <div class="text-center tracking-[4px]">
+                <h1 class="text-[#e60000] text-xl md:text-2xl">Blog News</h1>
+                <h1 class="text-[#800000] font-bold text-2xl md:text-5xl my-2 md:my-5">ARTICLES ABOUT SPORTS</h1>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 p-10">
+                <div class="">
+                    <div class="overflow-hidden " id="blogImage">
+                        <div class="h-[350px] sm:h-[400px] md:h-[250px] bg-cover transition duration-1000 ease-in-out delay-150 hover:scale-125 hover:-rotate-6 hover:brightness-50"
+                            style="background-image: url(images/cropped-shot-of-male-athlete-stretching-on-running-4XEWCLC-1024x683.jpg);">
+                        </div>
+                    </div>
+                    <h1 class="text-[#e60000] tracking-[3px] text-sm md:text-xl mt-5">NOVEMBER 18, 2022</h1>
+                    <h1 class="text-[#800000] font-medium text-xl md:text-3xl my-3">HEALTH & SAFETY WITH RUNNING</h1>
+                    <button
+                        class="w-36 font-medium h-10 bg-[#e60000] text-white 
+                        hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500 mt-3">Read
+                        More</button>
+                </div>
+                <div class="">
+                    <div class="overflow-hidden " id="blogImage">
+                        <div class="h-[350px] sm:h-[400px] md:h-[250px] bg-cover transition duration-1000 ease-in-out delay-150 hover:scale-125 hover:-rotate-6 hover:brightness-50"
+                            style="background-image: url(images/legs-men-athletes-runners-8P7B7NG-1024x683.jpg);">
+                        </div>
+                    </div>
+                    <h1 class="text-[#e60000] tracking-[3px] text-sm md:text-xl mt-5">NOVEMBER 18, 2022</h1>
+                    <h1 class="text-[#800000] font-medium text-xl md:text-3xl my-3 ">CHOOSING THE RUNNING SHOES</h1>
+                    <button
+                        class="w-36 font-medium h-10 bg-[#e60000] text-white 
+                        hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500 mt-3">Read
+                        More</button>
+                </div>
+
+                <div class="">
+                    <div class="overflow-hidden " id="blogImage">
+                        <div class="h-[350px] sm:h-[400px] md:h-[250px] bg-cover transition duration-1000 ease-in-out delay-150 hover:scale-125 hover:-rotate-6 hover:brightness-50"
+                            style="background-image: url(images/female-runner-in-start-position-P4DGNR6-1024x683.jpg);">
+                        </div>
+                    </div>
+                    <h1 class="text-[#e60000] tracking-[3px] text-sm md:text-xl mt-5">NOVEMBER 18, 2022</h1>
+                    <h1 class="text-[#800000] font-medium text-xl md:text-3xl my-3 uppercase ">Running tip for the
+                        beginner
+                    </h1>
+                    <button
+                        class="w-36 font-medium h-10 bg-[#e60000] text-white 
+                        hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500 mt-3">Read
+                        More</button>
+                </div>
+            </div>
+        </div>
+        <!---------------------------footer------------------------>
+        <footer class="bg-[#e6dfdf] text-[#e60000]  border-black  ">
+            <div class="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-0 py-2 md:py-16 ">
+                <div class="p-10 md:p-10 md:px-10  grid place-items-center md:place-items-start  mt-10 md:mt-0 lg:mt-0">
+                    <img src="images/mainlogo.png" alt=""
+                        class="w-72 sm:w-72  md:w-36 lg:w-36 -mt-10">
+                    <h1 class="my-0 text-center md:text-left">Lorem ipsum dolor sit amet, consec tetur
+                        adipiscing
+                        elit.</h1>
+                    <span class="flex justify-start gap-5 mt-4 md:mt-0 lg:mt-0 md:gap-2 lg:gap-5 py-2 text-[#e60000]">
+                        <i
+                            class="fa-brands fa-facebook-f  w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                        <i
+                            class="fa-brands fa-twitter w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                        <i
+                            class="fa-brands fa-youtube w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                        <i
+                            class="fa-brands fa-facebook-messenger  w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200 "></i>
+                    </span>
+                </div>
+                <div class=" p-5  md:p-5  border-black text-center  md:text-left mx-0 md:mx-auto ">
+                    <h1 class="text-xl  md:text-2xl lg:text-2xl font-bold text-[#e60000]">Contacts</h1>
+                    <p class="my-0 mt-4">+1 (234) 567 890</p>
+                    <p class="my-0 mt-1">example@mail.com</p>
+                    <h1 class="text-xl md:text-2xl lg:text-2xl font-bold my-2 mt-4 text-[#e60000]">Address</h1>
+                    <p class="my-0 mt-4">323 Valley Lane, Austin</p>
+                    <p class="my-0 mt-1">07.00 AM - 19.00 PM</p>
+                </div>
+                <div class="p-5  md:p-5 text-center md:text-left mx-0 md:mx-auto">
+                    <h1 class="text-xl md:text-2xl lg:text-2xl font-bold text-[#e60000]">Explore</h1>
+                    <ul class="text-md">
+                        <li class="my-0 mt-4"><a href="./index.html">HOME</a></li>
+                        <li class="my-0 md:my-2"><a href="./about.html">ABOUT</a></li>
+                        <li class="my-0 md:my-2"><a href="./programe.html">PROGRAM</a></li>
+                        <li class="my-0 md:my-2"><a href="./faq.html">FAQs</a></li>
+                        <li class="my-0 md:my-2"><a href="./blog.html">BLOG</a></li>
+                        <li class="my-0 md:my-2"><a href="./contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div
+                    class="p-0  md:p-5 md:w-[300%] lg:w-[100%] py-5  text-center md:text-center lg:text-left  md:mx-auto">
+                    <h1 class="text-xl md:text-2xl lg:text-2xl font-bold text-[#e60000]">Lets Talk</h1>
+                    <p class="my-0 mt-4">Phasellus eros neque, porta vitae vehicula non.</p>
+                    <span>
+                        <button
+                            class=" mt-6  w-36 h-10 bg-[#e60000] text-white 
+                            hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500 ">Live
+                            Chat</button></span>
+                </div>
+            </div>
+            <div class="mb-12 text-center ">
+                <h1 class="text-2xl font-medium text-[#e60000]">NEWSLETTER</h1>
+                <span class="">
+                    <input type="text"
+                        class="w-52 md:w-96 h-10 bg-transparent border border-[#e60000] my-10 outline-none">
+                    <button
+                        class="w-36 font-medium h-10 bg-[#e60000] text-white 
+                     hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500  ">Subscribe</button>
+                </span>
+            </div>
+            <hr class="w-[100%]  border-[1.3px] border-[#e60000] ">
+            <div class="grid grid-cols-1 md:grid-cols-2 w-full text-[#e60000] flex-col-reverse md:flex-col-row p-3">
+                <h1 class=" md:ml-5 lg:ml-5 text-xs md:text-sm text-center md:text-left  py-1 md:py-2">Copyright © 2022
+                    ASK
+                    Project
+                </h1>
+                <div class="flex justify-around md:justify-end px-10 py-1  md:py-2 ">
+                    <h1 class="px-5 hover:text-[#800000] text-xs md:text-sm    ">Privacy Policy</h1>
+                    <h1 class="hover:text-[#800000] text-xs md:text-sm  ">Terms & conditions</h1>
+                </div>
+
+            </div>
+
+
+        </footer>
+        <script src="index.js"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+</body>
+
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pricing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-white">
+    <div class=" h-[200px] sm:h-[300px] relative  border-white ">
+
+        <!----------------------------------Landing Page start---------------------->
+        <div class="hidden sm:block py-1 px-5 grid grid-cols-3  h-10 bg-[#e60000] z-10 ">
+            <span class="grid grid-cols-2 text-white">
+                <p>ranner@mail.com</p>
+                <p>+1(234)567890</p>
+            </span>
+            <span class="-mt-4 md:py1 flex justify-end gap-6 pr-10  col-span-2 text-white">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-facebook-messenger"></i>
+            </span>
+        </div>
+        <div class="w-full grid grid-cols-2 md:grid-cols-3 z-20 absolute  ">
+            <div class="sticky  " id="logo">
+                <img src="images/mainlogo.png" alt="" width="150px" class="absolute ">
+            </div>
+            <ul class="hidden  -mx-24 md:mx-0 md:flex justify-between gap-5 mt-4 text-white font-bold  ">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li onmouseover="dropdown1()" onmouseout="dropdown1End()"><a href="">Programs
+                    <div class="bg-black/75 p-5 absolute" id="programMenu" style="display:none;">
+                        <ul class=" text-zinc-100 font-normal  ">
+                            <li><a href="./programe.html" class="hover:text-[#e60000]">Program</a></li>
+                            <li><a href="./program_detail.html" class="hover:text-[#e60000]">Program Details</a></li>
+                        </ul>
+                    </div>
+                </li>
+                </a>    
+                <li onmouseover="dropdown2()" onmouseout="dropdown2End()"><a href="">Pages</a>
+                    <div class="bg-black/75 p-5 absolute " id="pagesMenu" style="display:none;">
+                        <ul class=" text-zinc-100 font-normal  ">
+                            <li><a href="./events.html" class="hover:text-[#e60000]">Event</a></li>
+                            <li><a href="./faq.html" class="hover:text-[#e60000]">FAQs</a></li>
+                            <li><a href="./pricing.html" class="hover:text-[#e60000]">Pricing</a></li>
+                            <li><a href="./process.html" class="hover:text-[#e60000]">Process</a></li>
+                            <li><a href="./team.html" class="hover:text-[#e60000]">Team</a></li>
+                            <li><a href="./blog.html" class="hover:text-[#e60000]">Blog</a></li>
+                            <li><a href="./single_post.html" class="hover:text-[#e60000]">Single Page</a></li>
+                            <li><a href="" class="hover:text-[#e60000]">404 Page</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="./contact.html">Contacts</a></li>
+            </ul>
+            <div class="">
+                <button class="hidden md:block  bg-white text-[#e60000] w-24 h-8 mr-10 mt-2 float-right">Sign
+                    Up</button>
+                <button class="block md:hidden text-white text-2xl h-8 mr-10 mt-2 float-right" onclick="menuOpen()"
+                    id="bar"><i class="fa-solid fa-bars sticky "></i></button>
+            </div>
+        </div>
+        <div class="top-[20%]  pl-3 md:pl-10 absolute text-center text-white w-full md:my-10 " id="landingText">
+            <h1 class="text-3xl font-medium sm:text-5xl md:text-6xl font-bold my-6">PRICING PLAN</h1>
+            <H1 class="text-xl sm:text-2xl md:text-3xl font-medium">HOME
+                <i class="fa-sharp fa-solid fa-stop text-[#e60000] text-xl sm:text-2xl md:text-3xl"></i>
+                PRICE
+            </H1>
+
+        </div>
+        <!-----------------------menu on click (responsive )------------------>
+        <div class="overflow-auto  w-full absolute  bg-black/75 h-full  md:hidden" id="nav" style="left:-100%;transition: .5s;">
+            <div class="pt-10 px-20 float-left  w-[80%]">
+                <img src="images/mainlogo.png" alt="" width="150px" class="">
+            </div>
+            <div class="float-left w-10 pt-10 text-2xl text-[#e60000] ">
+                <i class="fa-solid fa-xmark " onclick="menuClose()"></i>
+            </div>
+            <ul class="mx-24 mt-20">
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./index.html">Home</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./about.html">About</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Programs</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Pages</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Contacts</a></li>
+            </ul>
+        </div>
+        <!-----------------------menu on click end------------------>
+
+        <div class="h-full bg-cover bg-fixed "
+            style="background-image:linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(images/10036.jpg);">
+        </div>
+    </div>
+    <section class=" bg-white">
+        <div class="mx-auto md:max-w-screen-xl max-w-screen-2xl text-center px-8 py-12 md:px-24 md:py-12">
+            <div class="mt-10 md:mt-10 ">
+                <h1 class="mb-8 mt-10 text-sm tracking-widest text-[#e60000] text-center lg:text-left"
+                    style="letter-spacing: 5px;">
+                    PRICING PLAN</h1>
+                <div class="md:grid lg:grid-cols-2 ">
+                    <h1 class="text-4xl text-[#800000] font-bold tracking-tight text-1xl lg:text-left ">
+                        AFFORDABLE PRICING PLAN</h1>
+                    <div
+                        class="mt-10 md:mt-0 text-blue-700 hover:text-white  -white   font-medium text-sm px-5 md:px-5 py-3 text-center mr-2    lg:ml-96 ">
+
+                        <button type="button"
+                            class="bg-[#e60000] text-black w-24 h-10 hover:bg-[transparent] hover:border-2 hover:border-[#e60000] hover:text-[#800000]">Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md:grid md:grid-cols-3 md:gap-5 md:px-24 md:mt-8 md:mb-20 px-5 ">
+            <div class="md:px-8 px-8 py-1 md:py-0 top-36 bg-[#e6dfdf] text-left">
+                <h1 class="font-bold text-[#800000] text-2xl mt-10">BASIC OFFER</h1>
+                <p class="text-sm text-[#e60000] py-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    elit tellus.</p>
+                <div class="flex">
+                    <h1 class="font-bold text-[#800000] md:text-2xl md:mt-10 mt-8 text-2xl">$</h1>
+                    <span class="font-bold ml-1 text-[#800000] md:text-5xl text-4xl mt-6">320</span>
+                    <span class=" ml-2 text-[#e60000] text-sm mt-8">/ Program</span>
+                </div>
+                <div class="mt-10">
+                    <div class="flex mb-3">
+                        <i class="fa-sharp fa-solid fa-square mt-1  " style="color:#e60000;"></i>
+                        <h1 class="font-normal text-[#e60000] md:text-base text-sm ml-2 mb-1">PERSONAL TRAINER</h1>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fa-sharp fa-solid fa-square mt-1" style="color:#e60000;"></i>
+                        <h1 class="font-normal text-[#e60000] md:text-base text-sm ml-2 mb-1">PERSONAL TRAINER</h1>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fa-sharp fa-solid fa-square mt-1 " style="color:#e60000;"></i>
+                        <h1 class="font-normal text-[#e60000] md:text-base text-sm ml-2 mb-1">PERSONAL TRAINER</h1>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fa-sharp fa-solid fa-square mt-1 " style="color:#e60000;"></i>
+                        <h1 class="font-normal text-[#e60000] md:text-base text-sm ml-2 mb-1">PERSONAL TRAINER</h1>
+                    </div>
+                </div>
+                <button type="button"
+                    class="text-[#e60000] hover:text-white border border-[#e60000] hover:bg-[#e60000] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center mr-2 md:mb-2 mb-8  uppercase mt-3">Get
+                    started</button>
+            </div>
+            <div class="md:px-8 px-8 py-1 md:py-0 top-36 mt-8 md:mt-0 text-left bg-[#e60000]">
+                <h1 class="font-bold text-white text-2xl mt-10">REGULAR OFFER</h1>
+                <p class="text-sm text-white py-3 font-semibold ">Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit
+                    elit tellus.</p>
+                <div class="flex">
+                    <h1 class="font-bold text-white text-2xl md:text-2xl md:mt-10 mt-7">$</h1>
+                    <span class="font-bold ml-1 text-white md:text-5xl text-4xl mt-6">450</span>
+                    <span class=" ml-2 text-white text-sm mt-8 font-semibold ">/ Program</span>
+                </div>
+                <div class="mt-10">
+                    <div class="flex mb-3">
+                        <i class="fa-sharp fa-solid fa-square mt-1 " style="color: #e6dfdf;"></i>
+                        <h1 class="font-semibold  text-white md:text-base text-sm ml-2 mb-1">PERSONAL TRAINER</h1>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fa-sharp fa-solid fa-square mt-1 " style="color:#e6dfdf;"></i>
+                        <h1 class="font-semibold  text-white md:text-base text-sm ml-2 mb-1">PERSONAL TRAINER</h1>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fa-sharp fa-solid fa-square mt-1 " style="color: #e6dfdf;"></i>
+                        <h1 class="font-semibold  text-white md:text-base text-sm ml-2 mb-1">PERSONAL TRAINER</h1>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fa-sharp fa-solid fa-square mt-1 " style="color:#e6dfdf;"></i>
+                        <h1 class="font-semibold text-white text-sm ml-2 mb-1">PERSONAL TRAINER</h1>
+                    </div>
+                </div>
+                <button type="button"
+                    class="text-[#e6dfdf] hover:text-[#e60000] border border-[#e6dfdf] hover:bg-[#e6dfdf] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center mr-2 md:mb-2 mb-8  uppercase mt-3">Get
+                    started</button>
+            </div>
+            <div class="md:px-8 px-8 py-1 md:py-0 top-36 bg-[#e6dfdf] text-left">
+                <h1 class="font-bold text-[#800000] text-2xl mt-10">BASIC OFFER</h1>
+                <p class="text-sm text-[#e60000] py-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    elit tellus.</p>
+                <div class="flex">
+                    <h1 class="font-bold text-[#800000] md:text-2xl md:mt-10 mt-8 text-2xl">$</h1>
+                    <span class="font-bold ml-1 text-[#800000] md:text-5xl text-4xl mt-6">320</span>
+                    <span class=" ml-2 text-[#e60000] text-sm mt-8">/ Program</span>
+                </div>
+                <div class="mt-10">
+                    <div class="flex mb-3">
+                        <i class="fa-sharp fa-solid fa-square mt-1  " style="color:#e60000;"></i>
+                        <h1 class="font-normal text-[#e60000] md:text-base text-sm ml-2 mb-1">PERSONAL TRAINER</h1>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fa-sharp fa-solid fa-square mt-1" style="color:#e60000;"></i>
+                        <h1 class="font-normal text-[#e60000] md:text-base text-sm ml-2 mb-1">PERSONAL TRAINER</h1>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fa-sharp fa-solid fa-square mt-1 " style="color:#e60000;"></i>
+                        <h1 class="font-normal text-[#e60000] md:text-base text-sm ml-2 mb-1">PERSONAL TRAINER</h1>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fa-sharp fa-solid fa-square mt-1 " style="color:#e60000;"></i>
+                        <h1 class="font-normal text-[#e60000] md:text-base text-sm ml-2 mb-1">PERSONAL TRAINER</h1>
+                    </div>
+                </div>
+                <button type="button"
+                    class="text-[#e60000] hover:text-white border border-[#e60000] hover:bg-[#e60000] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center mr-2 md:mb-2 mb-8  uppercase mt-3">Get
+                    started</button>
+            </div>
+        </div>
+    </section>
+    <div class="bg-[#e6dfdf] " id="sponsor">
+        <div class="pt-5 text-center px-10">
+            <p class="text-2xl text-[#800000]">OUR SPONSORS</p>
+            <h1 class="text-3xl md:text-5xl text-[#e60000] my-5">SPORTSMAN IS WHAT WE DO</h1>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 px-20  sm:px-16 md:px-16 gap-5 brightness-50 ">
+            <img src="images/10016.png" alt=""
+                class=" p-5 sm:p-8 md:p-10 brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10017.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10018.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10020.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10022.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10024.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10026.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+            <img src="images/10027.png" alt=""
+                class="  p-5 sm:p-8 md:p-10  brightness-50 hover:brightness-100 transition delay-150 duration-500">
+        </div>
+    </div>
+    <section class="my-12">
+        <div class="px-10 text-center pt-0">
+            <div class=" md:col-span-2 py-5">
+                <h1 class="text-[#800000] text-2xl tracking-[4px]">FAQS</h1>
+            </div>
+            <div class="">
+                <h1 class="text-2xl md:text-4xl text-[#e60000] tracking-[5px] font-bold text-center mb-8">FREQUENTLY
+                    ASKED <br>QUESTIONS
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="bg-white w-full md:h-[500px] py-6">
+        <!-- animation up arrow to  down arrow -->
+        <!-- ====== FAQ Section Start -->
+        <div class="bg-[#e6dfdf]  grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 text-[#800000] ">
+            <div class="w-full mx-auto  ">
+                <div class="bg-white p-10 shadow-sm">
+
+                    <!-- What is term -->
+                    <div class="transition hover:bg-[#800000] hover:text-white">
+                        <!-- header -->
+                        <div
+                            class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16 hover:text-white">
+                            <i class="fas fa-plus"></i>
+                            <h3 class="">What is term?</h3>
+                        </div>
+                        <!-- Content -->
+                        <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 bg-[#800000]">
+                            <p class="leading-6 font-light pl-9 text-justify">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <!-- When to use Accordion Components -->
+                    <div class="transition hover:bg-[#800000]">
+                        <!-- header -->
+                        <div
+                            class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16 hover:text-white">
+                            <i class="fas fa-plus"></i>
+                            <h3 class="">When to use Accordion Components?</h3>
+                        </div>
+                        <!-- Content -->
+                        <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 bg-[#800000]">
+                            <p class="leading-6 font-light pl-9 text-justify text-white">
+                                laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <!-- Accordion Wrapper -->
+                    <div class="transition hover:bg-[#800000]">
+                        <!-- header -->
+                        <div
+                            class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16 hover:text-white">
+                            <i class="fas fa-plus"></i>
+                            <h3 class="">How can it be defined?</h3>
+                        </div>
+                        <!-- Content -->
+                        <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 bg-[#800000] text-white">
+                            <p class="leading-6 font-light pl-9 text-justify">
+                                laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Wrapper -->
+                    <div class="transition hover:bg-[#800000]">
+                        <!-- header -->
+                        <div
+                            class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16 hover:text-white">
+                            <i class="fas fa-plus"></i>
+                            <h3 class="">Chamber reached do he nothing be?</h3>
+                        </div>
+                        <!-- Content -->
+                        <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 bg-[#800000] text-white">
+                            <p class="leading-6 font-light pl-9 text-justify">
+                                laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="w-full mx-auto ">
+                <div class="bg-white p-10 shadow-sm">
+
+                    <!-- What is term -->
+                    <div class="transition hover:bg-[#800000]">
+                        <div
+                            class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16 hover:text-white">
+                            <i class="fas fa-plus"></i>
+                            <h3 class="hover:text-white">What is term?</h3>
+                        </div>
+                        <!-- Content -->
+                        <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 bg-[#800000] text-white">
+                            <p class="leading-6 font-light pl-9 text-justify">
+                                laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <!-- When to use Accordion Components -->
+                    <div class="transition hover:bg-[#800000]">
+                        <!-- header -->
+                        <div
+                            class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16 hover:text-white">
+                            <i class="fas fa-plus"></i>
+                            <h3 class="">When to use Accordion Components?</h3>
+                        </div>
+                        <!-- Content -->
+                        <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 bg-[#800000] text-white">
+                            <p class="leading-6 font-light pl-9 text-justify">
+                                laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <!-- Accordion Wrapper -->
+                    <div class="transition hover:bg-[#800000]">
+                        <!-- header -->
+                        <div
+                            class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16 hover:text-white">
+                            <i class="fas fa-plus"></i>
+                            <h3 class="">How can it be defined?</h3>
+                        </div>
+                        <!-- Content -->
+                        <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 bg-[#800000] text-white">
+                            <p class="leading-6 font-light pl-9 text-justify ">
+                                laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Wrapper -->
+                    <div class="transition hover:bg-[#800000]">
+                        <!-- header -->
+                        <div
+                            class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16 hover:text-white">
+                            <i class="fas fa-plus"></i>
+                            <h3 class="">Chamber reached do he nothing be?</h3>
+                        </div>
+                        <!-- Content -->
+                        <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 bg-[#800000] text-white">
+                            <p class="leading-6 font-light pl-9 text-justify ">
+                                laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <div class="relative">
+        <div class=" bg-[#e60000]/[0.9] h-full w-full grid grid-cols-1 md:grid-cols-2  absolute content-center ">
+            <div class="">
+                <h1 class="text-2xl md:text-4xl text-center text-white font-bold ">LET'S DO THE RUN TOGETHER!</h1>
+            </div>
+            <div class="  grid justify-center px-10 py-10 md:py-0">
+                <button
+                    class="w-32 h-10 text-white text-[#e60000] hover:text-[#e60000] border border-[#e6dfdf] hover:bg-[#e6dfdf] ">SignUp
+                    Now</button>
+            </div>
+        </div>
+        <div class="bg-fixed h-56" style="background-image: url(images/10041.jpg);"></div>
+    </div>
+
+    <!---------------------------footer------------------------>
+    <footer class="bg-[#e6dfdf] text-[#e60000]  border-black  ">
+        <div class="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-0 py-2 md:py-16 ">
+            <div class="p-10 md:p-10 md:px-10  grid place-items-center md:place-items-start  mt-10 md:mt-0 lg:mt-0">
+                <img src="images/mainlogo.png" alt=""
+                    class="w-72 sm:w-72  md:w-36 lg:w-36 -mt-10">
+                <h1 class="my-0 text-center md:text-left">Lorem ipsum dolor sit amet, consec tetur
+                    adipiscing
+                    elit.</h1>
+                <span class="flex justify-start gap-5 mt-4 md:mt-0 lg:mt-0 md:gap-2 lg:gap-5 py-2 text-[#e60000]">
+                    <i
+                        class="fa-brands fa-facebook-f  w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                    <i
+                        class="fa-brands fa-twitter w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                    <i
+                        class="fa-brands fa-youtube w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200"></i>
+                    <i
+                        class="fa-brands fa-facebook-messenger  w-8 h-8 grid place-content-center border-2 border-[#e60000] hover:bg-[#e60000] hover:text-white  hover:border-0 transition ease-in-out duration-200 "></i>
+                </span>
+            </div>
+            <div class=" p-5  md:p-5  border-black text-center  md:text-left mx-0 md:mx-auto ">
+                <h1 class="text-xl  md:text-2xl lg:text-2xl font-bold text-[#e60000]">Contacts</h1>
+                <p class="my-0 mt-4">+1 (234) 567 890</p>
+                <p class="my-0 mt-1">example@mail.com</p>
+                <h1 class="text-xl md:text-2xl lg:text-2xl font-bold my-2 mt-4 text-[#e60000]">Address</h1>
+                <p class="my-0 mt-4">323 Valley Lane, Austin</p>
+                <p class="my-0 mt-1">07.00 AM - 19.00 PM</p>
+            </div>
+            <div class="p-5  md:p-5 text-center md:text-left mx-0 md:mx-auto">
+                <h1 class="text-xl md:text-2xl lg:text-2xl font-bold text-[#e60000]">Explore</h1>
+                <ul class="text-md">
+                    <li class="my-0 mt-4"><a href="./index.html">HOME</a></li>
+                    <li class="my-0 md:my-2"><a href="./about.html">ABOUT</a></li>
+                    <li class="my-0 md:my-2"><a href="./programe.html">PROGRAM</a></li>
+                    <li class="my-0 md:my-2"><a href="./faq.html">FAQs</a></li>
+                    <li class="my-0 md:my-2"><a href="./blog.html">BLOG</a></li>
+                    <li class="my-0 md:my-2"><a href="./contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <div
+                class="p-0  md:p-5 md:w-[300%] lg:w-[100%] py-5  text-center md:text-center lg:text-left  md:mx-auto">
+                <h1 class="text-xl md:text-2xl lg:text-2xl font-bold text-[#e60000]">Lets Talk</h1>
+                <p class="my-0 mt-4">Phasellus eros neque, porta vitae vehicula non.</p>
+                <span>
+                    <button
+                        class=" mt-6  w-36 h-10 bg-[#e60000] text-white 
+                        hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500 ">Live
+                        Chat</button></span>
+            </div>
+        </div>
+        <div class="mb-12 text-center ">
+            <h1 class="text-2xl font-medium text-[#e60000]">NEWSLETTER</h1>
+            <span class="">
+                <input type="text"
+                    class="w-52 md:w-96 h-10 bg-transparent border border-[#e60000] my-10 outline-none">
+                <button
+                    class="w-36 font-medium h-10 bg-[#e60000] text-white 
+                 hover:bg-white hover:text-[#e60000] border-2 border-[#e60000] transition ease-in-out duration-500  ">Subscribe</button>
+            </span>
+        </div>
+        <hr class="w-[100%]  border-[1.3px] border-[#e60000] ">
+        <div class="grid grid-cols-1 md:grid-cols-2 w-full text-[#e60000] flex-col-reverse md:flex-col-row p-3">
+            <h1 class=" md:ml-5 lg:ml-5 text-xs md:text-sm text-center md:text-left  py-1 md:py-2">Copyright © 2022
+                ASK
+                Project
+            </h1>
+            <div class="flex justify-around md:justify-end px-10 py-1  md:py-2 ">
+                <h1 class="px-5 hover:text-[#800000] text-xs md:text-sm    ">Privacy Policy</h1>
+                <h1 class="hover:text-[#800000] text-xs md:text-sm  ">Terms & conditions</h1>
+            </div>
+
+        </div>
+
+
+    </footer>
+    <script src="./index.js"></script>
+    <!--for accordian code--->
+    <script>
+        const accordionHeader = document.querySelectorAll(".accordion-header");
+        accordionHeader.forEach((header) => {
+            header.addEventListener("click", function () {
+                const accordionContent = header.parentElement.querySelector(".accordion-content");
+                let accordionMaxHeight = accordionContent.style.maxHeight;
+
+                // Condition handling
+                if (accordionMaxHeight == "0px" || accordionMaxHeight.length == 0) {
+                    accordionContent.style.maxHeight = `${accordionContent.scrollHeight + 32}px`;
+                    header.querySelector(".fas").classList.remove("fa-plus");
+                    header.querySelector(".fas").classList.add("fa-times");
+                    header.parentElement.classList.add("bg-[#800000]");
+                } else {
+                    accordionContent.style.maxHeight = `0px`;
+                    header.querySelector(".fas").classList.add("fa-plus");
+                    header.querySelector(".fas").classList.remove("fa-times");
+                    header.parentElement.classList.remove("bg-[#800000]");
+                }
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
