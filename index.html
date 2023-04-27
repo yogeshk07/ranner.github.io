@@ -65,11 +65,11 @@
                 <i class="fa-brands fa-facebook-messenger"></i>
             </span>
         </div>
-        <div class="w-full grid grid-cols-2 md:grid-cols-3 z-20 absolute  ">
-            <div class="sticky" id="logo">
+        <div class="w-full grid grid-cols-2 md:grid-cols-3 z-20 absolute">
+            <div class="sticky " id="logo">
                 <img src="./images/10001.png" alt="" width="150px"  class="absolute">
             </div>
-            <ul class="hidden  -mx-24 md:mx-0 md:flex justify-between gap-5 mt-4 text-white font-bold  ">
+            <ul class=" hidden  -mx-24 md:mx-0 md:flex justify-between gap-5 mt-4 text-white font-bold  ">
                 <li><a href="">Home</a></li>
                 <li><a href="./about.html">About</a></li>
                 <li onmouseover="dropdown1()" onmouseout="dropdown1End()"><a href="">Programs
@@ -99,15 +99,145 @@
                 <li><a href="./contact.html">Contacts</a></li>
             </ul>
             <div class="">
-                <button class="hidden md:block  bg-white text-[#e60000] w-24 h-8 mr-10 mt-2 float-right">Sign
-                    Up</button>
-                <button class="block md:hidden text-white text-2xl h-8 mr-10 mt-2 float-right" onclick="menuOpen()"
-                    id="bar"><i class="fa-solid fa-bars sticky "></i></button>
+                <!-- <button class="hidden md:block  bg-white text-[#e60000] w-24 h-8  md:ml-4 mr-10 mt-2 float-right">Book Now</button> -->
+                    
+                <div class="flex justify-end">
+                    <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class=" md:block  bg-white text-[#e60000] w-24 h-8 lg:ml-24 md:ml-24 mr-4 mt-2 float-right hover:text-white hover:bg-[#e60000] hover:border-white">Book Now
+                    </button>
+                    <button class="block md:hidden text-white text-2xl h-8 mr-10 mt-2 float-right" onclick="menuOpen()"
+                        id="bar"><i class="fa-solid fa-bars sticky "></i>
+                    </button>
+                    
+                </div>
             </div>
         </div>
+        <!-- Modal toggle -->
+
+<!-- Main modal -->
+<div id="authentication-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 bottom-24 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative w-[700px]  max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="authentication-modal">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <div class="px-6 py-6 lg:px-8">
+                <h3 class="mb-4 text-xl font-medium text-[#800000] mx-auto">BOOKING FORM</h3>
+                <form class="space-y-6" action="#" onsubmit="sendEmail(); sandEmail(); reset(); return false;  reset(); return false;">
+                    <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2 gap-4">
+                        <label for="email" class="block mb-2 text-sm font-medium text-[#800000] dark:text-white">Requested Start Date</label>
+                        <input type="date"  id="sd" class="text-[#800000] border-2 border-[#e60000] w-full" required>
+                        <label for="date" class="text-sm font-medium text-[#800000] dark:text-white">Requested End Date</label>
+                        <input type="date" id="ed" class="text-[#800000] border-2 border-[#e60000]  text-sm w-full" required>
+                    </div>
+                     <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
+                        <div>
+                        <label for="countries" class="block mb-2 text-sm font-medium text-[#800000] dark:text-white">Select your preferred time</label>
+                       <select id="countries" class="bg-gray-50 text-[#800000] text-sm border-2 border-[#e60000]  p-1 ">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                          <option>11</option>
+                          <option>12</option>
+                        </select>
+
+                        <label for="date" class="text-sm font-medium text-[#800000] dark:text-white ">Hour</label>
+                        <select id="" class="bg-gray-50 text-[#800000] border- text-sm  p-1 border-2 border-[#e60000]">
+                          <option>00</option>
+                          <option>10</option>
+                          <option>20</option>
+                          <option>30</option>
+                          <option>40</option>
+                          <option>50</option>
+                        </select>
+                        <label for="date" class="text-sm font-medium text-[#800000] dark:text-white ">Minutes</label>
+                       <select id="" class="bg-gray-50 text-[#800000] text-sm border-2 border-[#e60000]  p-1 ">
+                          <option>AM</option>
+                          <option>PM</option>
+                      </select>
+                     </div> 
+                     <div class="">
+                        <label for="" class="block mb-2 text-sm font-medium text-[#800000] dark:text-white">UNTILL</label>
+                       <select id="times" class="bg-gray-50 text-[#800000]  text-sm border-2 border-[#e60000]  p-1 ">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                          <option>11</option>
+                          <option>12</option>
+                        </select>
+
+                        <label for="date" class="text-sm font-medium text-[#800000] dark:text-white ">Hour</label>
+                        <select id="countries" class="bg-gray-50 text-[#800000] border- text-sm  p-1 border-2 border-[#e60000]">
+                          <option>00</option>
+                          <option>10</option>
+                          <option>20</option>
+                          <option>30</option>
+                          <option>40</option>
+                          <option>50</option>
+                        </select>
+                        <label for="date" class="text-sm font-medium text-[#800000] dark:text-white ">Minutes</label>
+                       <select id="countries" class="bg-gray-50 text-[#800000] text-sm border-2 border-[#e60000]  p-1 ">
+                          <option>AM</option>
+                          <option>PM</option>
+                      </select>
+                     </div> 
+                    </div>
+                    <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4">
+                        <div>
+                          <label for="password" class="block mb-2 text-sm font-medium text-[#800000] dark:text-white">Name of the event</label>
+                          <input type="text" name="" id="ename" placeholder="Enter your Name" class="border-2 border-[#e60000] text-[#800000] text-sm  focus:border-green-800  w-full p-2.5 placeholder:text-[#800000]" required>
+                       </div>
+                       <div>
+                          <label for="" class="block mb-2 text-sm font-medium text-[#800000] dark:text-white">Name of the Youth</label>
+                          <input type="text" id="name" placeholder="Enter your Name" class="bg-gray-50 border-2 border-[#e60000] placeholder:text-[#800000] focus:border-[#e60000] text-sm w-full p-2.5 dark:bg-gray-600  text-[#800000]" required>
+                       </div>
+                    </div>
+                     <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4">
+                        <div>
+                          <label for="phone" class="block mb-2 text-sm font-medium text-[#800000] dark:text-white">Phone</label>
+                          <input type="text" name="" id="phone" placeholder="Enter Mobile" class="border-2 border-[#e60000] text-[#800000] placeholder:text-[#800000] text-sm   w-full p-2.5 " required>
+                       </div>
+                       <div>
+                          <label for="password" class="block mb-2 text-sm font-medium text-[#800000] dark:text-white">E-mail</label>
+                          <input type="email" name="" id="email" placeholder="Enter E-mail" class="border-2 border-[#e60000] focus:outline-none text-[#800000] placeholder:text-[#800000] text-sm   w-full p-2.5 " required>
+                       </div>
+                    </div>
+                    <!-- <div class="flex justify-between">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+                            </div>
+                            <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+                        </div>
+                        <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+                    </div> -->
+                    <div class="py-4">
+                    <button type="submit" class="w-full bg-[#e60000] text-white
+                                 hover:bg-transparent hover:text-[#e60000] border-2 border-[#e60000] mx-auto">SUBMIT</button>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 
         <div class="top-[20%]  pl-3 md:pl-10 absolute " id="landingText">
             <p class="text-[#e60000] text-2xl font-medium my-8">RUNNING CLUB</p>
-            <h1 class=" text-4xl md:text-6xl text-[#800000] font-bold tracking-[]  ">WHAT WE DO IN LIFE ECHOES IN
+            <h1 class=" text-4xl md:text-6xl text-[#800000] font-bold tracking-[]  ">WHAT WE DO IN LIFE ECHOES <br>IN
                 ETERNITY
             </h1>
             <p class="w-72 text-[#e60000] my-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
@@ -127,12 +257,33 @@
             <div class="float-left w-10 pt-10 text-2xl text-[#e60000] ">
                 <i class="fa-solid fa-xmark " onclick="menuClose()"></i>
             </div>
-            <ul class="mx-24 mt-20">
+            <ul class="mx-24 mt-36 sm:mt-48">
                 <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./index.html">Home</a></li>
                 <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./about.html">About</a></li>
-                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Programs</a></li>
-                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Pages</a></li>
-                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="./contact">Contacts</a></li>
+                <li class="py-2 text-[#e60000] font-bold text-medium" onmouseover="dropdown1()" onmouseout="dropdown1End()"><a href="">Programs</a>
+                <div class="bg-black/75 p-5 absolute" id="programMenu" style="display:none;">
+                        <ul class=" text-zinc-100 font-normal  ">
+                            <li><a href="./programe.html" class="hover:text-[#e60000]">Program</a></li>
+                            <li><a href="./program_detail.html" class="hover:text-[#e60000]">Program Details</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="py-2 text-[#e60000] font-bold text-medium" onmouseover="dropdown2()" onmouseout="dropdown2End()"><a href="">Pages</a>
+                    <div class="bg-black/75 p-5 absolute " id="pagesMenu" style="display:none;">
+                        <ul class=" text-zinc-100 font-normal  ">
+                            <li><a href="./events.html" class="hover:text-[#e60000]">Event</a></li>
+                            <li><a href="./faq.html" class="hover:text-[#e60000]">FAQs</a></li>
+                            <li><a href="./pricing.html" class="hover:text-[#e60000]">Pricing</a></li>
+                            <li><a href="./process.html" class="hover:text-[#e60000]">Process</a></li>
+                            <li><a href="./team.html" class="hover:text-[#e60000]">Team</a></li>
+                            <li><a href="./blog.html" class="hover:text-[#e60000]">Blog</a></li>
+                            <li><a href="./single_post.html" class="hover:text-[#e60000]">Single Page</a></li>
+                            <li><a href="" class="hover:text-[#e60000]">404 Page</a></li>
+                        </ul>
+                    </div>
+
+                </li>
+                <li class="py-2 text-[#e60000] font-bold text-medium"><a href="">Contacts</a></li>
             </ul>
         </div>
         <!-----------------------menu on click end------------------>
@@ -744,8 +895,12 @@
 
 
         </footer>
+
         <script src="index.js"></script>
         <script src="https://unpkg.com/scrollreveal"></script>
+        <!--smtp link---->
+        <script src="https://smtpjs.com/v3/smtp.js">
+</script>
 </body>
 
 </html>
